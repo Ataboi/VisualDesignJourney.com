@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Notifications - Visual Design Journey</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#5c5f60",
+                        "outline-variant": "#c8c4d4",
+                        "on-primary-fixed-variant": "#41379b",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#5a4300",
+                        "on-secondary-container": "#626566",
+                        "secondary-fixed-dim": "#c5c7c8",
+                        "on-tertiary-container": "#fffbff",
+                        "on-surface": "#131b2e",
+                        "tertiary-fixed": "#ffdf98",
+                        "surface-container": "#eaedff",
+                        "on-primary-fixed": "#140067",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#e1e3e4",
+                        "error": "#ba1a1a",
+                        "accent-soft-purple": "#7F77DD",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#d2d9f4",
+                        "surface-bright": "#faf8ff",
+                        "primary-container": "#7067cc",
+                        "on-background": "#131b2e",
+                        "surface": "#faf8ff",
+                        "on-secondary-fixed": "#191c1d",
+                        "inverse-primary": "#c5c0ff",
+                        "outline": "#787583",
+                        "primary-fixed-dim": "#c5c0ff",
+                        "on-primary-container": "#fffbff",
+                        "on-surface-variant": "#474552",
+                        "surface-white": "#FFFFFF",
+                        "primary-fixed": "#e4dfff",
+                        "inverse-surface": "#283044",
+                        "surface-container-high": "#e2e7ff",
+                        "secondary-fixed": "#e1e3e4",
+                        "text-muted": "#454F5E",
+                        "tertiary": "#745800",
+                        "on-secondary-fixed-variant": "#454748",
+                        "surface-tint": "#5951b4",
+                        "primary": "#574eb1",
+                        "tertiary-fixed-dim": "#efc04c",
+                        "surface-container-highest": "#dae2fd",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#926f00",
+                        "background": "#faf8ff",
+                        "on-tertiary-fixed": "#251a00",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#dae2fd",
+                        "inverse-on-surface": "#eef0ff",
+                        "surface-container-low": "#f2f3ff",
+                        "border-subtle": "#E9ECEF"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "margin-tablet": "32px",
+                        "section-gap": "80px",
+                        "margin-desktop": "48px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "caption": ["Inter"],
+                        "headline-xl-mobile": ["Manrope"],
+                        "headline-xl": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "caption": ["13px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "headline-xl-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-xl": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface antialiased pt-20">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 bg-surface-white/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-border-subtle dark:border-outline-variant flat no shadows">
+<div class="flex items-center gap-8">
+<a class="font-headline-md text-headline-md font-semibold text-on-surface dark:text-inverse-on-surface hover:opacity-80 transition-opacity duration-200" href="#">Visual Design Journey</a>
+<div class="hidden md:flex items-center gap-6">
+<a class="font-label-caps text-label-caps text-on-surface dark:text-inverse-on-surface hover:opacity-80 transition-opacity duration-200 uppercase" href="#">Explore</a>
+<a class="font-label-caps text-label-caps text-on-surface dark:text-inverse-on-surface hover:opacity-80 transition-opacity duration-200 uppercase" href="#">Curators</a>
+<a class="font-label-caps text-label-caps text-on-surface dark:text-inverse-on-surface hover:opacity-80 transition-opacity duration-200 uppercase" href="#">Trends</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center relative">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">search</span>
+<input class="pl-10 pr-4 py-2 border-[0.5px] border-border-subtle rounded-md bg-transparent font-body-md text-body-md focus:outline-none focus:border-accent-soft-purple text-on-surface placeholder-outline w-48" placeholder="Search" type="text"/>
+</div>
+<button class="font-label-caps text-label-caps bg-transparent border-[0.5px] border-border-subtle text-on-surface px-4 py-2 rounded-full hover:bg-border-subtle/30 transition-colors uppercase">Sign in</button>
+<button class="font-label-caps text-label-caps bg-accent-soft-purple text-surface-white px-4 py-2 rounded-full hover:opacity-90 transition-opacity uppercase">Create Board</button>
+</div>
+</nav>
+<main class="max-w-[800px] mx-auto px-margin-mobile md:px-margin-tablet py-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile md:font-headline-xl md:text-headline-xl text-on-surface">Notifications</h1>
+<button class="font-body-md text-body-md text-accent-soft-purple hover:opacity-80 transition-opacity">
+                Mark all as read
+            </button>
+</div>
+<!-- Filters -->
+<div class="flex flex-wrap gap-2 mb-8">
+<button class="font-label-caps text-label-caps bg-accent-soft-purple text-surface-white px-4 py-2 rounded-full uppercase">All</button>
+<button class="font-label-caps text-label-caps bg-[#F8F9FA] text-on-surface px-4 py-2 rounded-full border-[0.5px] border-border-subtle hover:bg-border-subtle/30 transition-colors uppercase">Likes</button>
+<button class="font-label-caps text-label-caps bg-[#F8F9FA] text-on-surface px-4 py-2 rounded-full border-[0.5px] border-border-subtle hover:bg-border-subtle/30 transition-colors uppercase">Follows</button>
+<button class="font-label-caps text-label-caps bg-[#F8F9FA] text-on-surface px-4 py-2 rounded-full border-[0.5px] border-border-subtle hover:bg-border-subtle/30 transition-colors uppercase">Comments</button>
+</div>
+<!-- Notifications List -->
+<div class="flex flex-col border-[0.5px] border-border-subtle rounded-lg overflow-hidden bg-surface-white">
+<!-- Unread Notification -->
+<div class="flex items-start gap-4 p-4 border-b-[0.5px] border-border-subtle bg-[#FAFAFA] border-l-2 border-l-accent-soft-purple relative group hover:bg-[#F0F0F0] transition-colors cursor-pointer">
+<img alt="Avatar" class="w-10 h-10 rounded-full object-cover shrink-0" data-alt="A close up portrait of a young woman with a neutral expression, looking directly at the camera. The lighting is soft and natural, emphasizing the minimalist editorial style of the platform. The background is slightly out of focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATcFDvwb-aZCGj2WFUJI-n8zg5C9zzrvb7LOQK6SncmZhvrjBVNutqf4RwPwxR9FMnyEp6lUZZkRU2xdUmO0SwgAAV7-37ZABiqt0EPLPJtnjr71XooZEyFzcbyXzuhO__jJ6rdnu1Enzjw_heQ3wzPQbBAFNledHsCbuNfGUnNQg1YqTG-_sj4G41VOK6Lh0ju-GBhw-k5-o6ZXo_bpBkD1T8VHvFcNU196Lg2reWbnXFSsatvwGCak5_UfvzR25VxaXnM8bYfv-v"/>
+<div class="flex-1 min-w-0 pt-1">
+<p class="font-body-md text-body-md text-on-surface">
+<span class="font-semibold">Studio Void</span> liked your board <span class="font-semibold">Brutalist Concrete Textures</span>
+</p>
+</div>
+<span class="font-caption text-caption text-text-muted shrink-0 pt-1">2h ago</span>
+</div>
+<!-- Read Notification -->
+<div class="flex items-start gap-4 p-4 border-b-[0.5px] border-border-subtle bg-surface-white relative group hover:bg-[#FAFAFA] transition-colors cursor-pointer">
+<img alt="Avatar" class="w-10 h-10 rounded-full object-cover shrink-0" data-alt="A portrait of a young man with a slight smile. The aesthetic is clean and professional, matching the platform's high-end gallery feel. He is wearing a simple dark shirt." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBErRajjfeoeKe314Tueam3tJpt9KN5Le9iYnpElyB3oz-y5piyEdfKYGTZGLGWcShShmGQp78KiZ_MGUMcVbRaILDzNWhjPG069X2WokLh6t6TQITxE1vIFEXKmJH4sjdwPQwrMiUVXeNJU0RIwVI2YAEsAAS8QZtEnpmY4Ce96IvlkaHgbrlTH3Dzy4uq5XaRD_uGGNFsiweADfY-oN9UaZJ6UnbaQXo7SRsgTDRLfFWTu-6OUCg2k-VWYllJhRjF7HqdEpD5SZ7"/>
+<div class="flex-1 min-w-0 pt-1">
+<p class="font-body-md text-body-md text-on-surface">
+<span class="font-semibold">Alex Chen</span> started following you.
+                    </p>
+</div>
+<span class="font-caption text-caption text-text-muted shrink-0 pt-1">5h ago</span>
+</div>
+<!-- Read Notification -->
+<div class="flex items-start gap-4 p-4 border-b-[0.5px] border-border-subtle bg-surface-white relative group hover:bg-[#FAFAFA] transition-colors cursor-pointer">
+<div class="w-10 h-10 rounded-full bg-[#F8F9FA] border-[0.5px] border-border-subtle flex items-center justify-center shrink-0 text-accent-soft-purple">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+</div>
+<div class="flex-1 min-w-0 pt-1">
+<p class="font-body-md text-body-md text-on-surface">
+<span class="font-semibold">Design Collective</span> commented on <span class="font-semibold">Minimal Typography 2024</span>: "Love the kerning on these examples."
+                    </p>
+</div>
+<span class="font-caption text-caption text-text-muted shrink-0 pt-1">1d ago</span>
+</div>
+<!-- Read Notification -->
+<div class="flex items-start gap-4 p-4 bg-surface-white relative group hover:bg-[#FAFAFA] transition-colors cursor-pointer">
+<img alt="Avatar" class="w-10 h-10 rounded-full object-cover shrink-0" data-alt="A cheerful portrait of a woman looking off-camera. The lighting highlights her features softly against a neutral background, adhering to the minimalist editorial guidelines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdFkov-OkzpzRQj6VbaM_yIIKPxLkJFz5oT7zTXAzS34qL4ybvqgzrv4suGeoAp3rHoRL0odF8plwuSh6kVKz6akcQSCfA7uQ_Y7z7bPoeKc-U-4bTqmjpbvlwxa9Q4ndIqHDR6KLeQ6-IdP80x0_ZPfLYHmCFrMV6NouOd6ft9E8aFepStfkm6caT6KtLoa0YVEWWOCKxNlVtKHIiTothfF_KAOYlJ3Fzkl4lv2x1sdAWlxrEszWX55tQSbH4qvqMuAMIFFrBcNiY"/>
+<div class="flex-1 min-w-0 pt-1">
+<p class="font-body-md text-body-md text-on-surface">
+<span class="font-semibold">Elena Rostova</span> saved your image to <span class="font-semibold">Editorial Layouts</span>
+</p>
+</div>
+<span class="font-caption text-caption text-text-muted shrink-0 pt-1">2d ago</span>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center bg-surface dark:bg-inverse-surface border-t border-border-subtle dark:border-outline-variant flat no shadows mt-20 gap-8">
+<div class="font-headline-md text-headline-md text-on-surface dark:text-inverse-on-surface font-semibold">
+            Visual Design Journey
+        </div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-label-caps text-label-caps text-text-muted dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors uppercase" href="#">Privacy Policy</a>
+<a class="font-label-caps text-label-caps text-text-muted dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors uppercase" href="#">Terms of Service</a>
+<a class="font-label-caps text-label-caps text-text-muted dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors uppercase" href="#">Archive</a>
+<a class="font-label-caps text-label-caps text-text-muted dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors uppercase" href="#">Contact</a>
+</div>
+<div class="font-body-md text-body-md text-text-muted dark:text-on-surface-variant">
+            © 2024 Visual Design Journey. All rights reserved.
+        </div>
+</footer>
+</body></html>

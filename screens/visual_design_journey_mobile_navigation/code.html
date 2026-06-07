@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Visual Design Journey - Mobile Nav &amp; Drawer</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#5c5f60",
+                    "outline-variant": "#c8c4d4",
+                    "on-primary-fixed-variant": "#41379b",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#5a4300",
+                    "on-secondary-container": "#626566",
+                    "secondary-fixed-dim": "#c5c7c8",
+                    "on-tertiary-container": "#fffbff",
+                    "on-surface": "#131b2e",
+                    "tertiary-fixed": "#ffdf98",
+                    "surface-container": "#eaedff",
+                    "on-primary-fixed": "#140067",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#e1e3e4",
+                    "error": "#ba1a1a",
+                    "accent-soft-purple": "#7F77DD",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#d2d9f4",
+                    "surface-bright": "#faf8ff",
+                    "primary-container": "#7067cc",
+                    "on-background": "#131b2e",
+                    "surface": "#faf8ff",
+                    "on-secondary-fixed": "#191c1d",
+                    "inverse-primary": "#c5c0ff",
+                    "outline": "#787583",
+                    "primary-fixed-dim": "#c5c0ff",
+                    "on-primary-container": "#fffbff",
+                    "on-surface-variant": "#474552",
+                    "surface-white": "#FFFFFF",
+                    "primary-fixed": "#e4dfff",
+                    "inverse-surface": "#283044",
+                    "surface-container-high": "#e2e7ff",
+                    "secondary-fixed": "#e1e3e4",
+                    "text-muted": "#454F5E",
+                    "tertiary": "#745800",
+                    "on-secondary-fixed-variant": "#454748",
+                    "surface-tint": "#5951b4",
+                    "primary": "#574eb1",
+                    "tertiary-fixed-dim": "#efc04c",
+                    "surface-container-highest": "#dae2fd",
+                    "on-error": "#ffffff",
+                    "tertiary-container": "#926f00",
+                    "background": "#faf8ff",
+                    "on-tertiary-fixed": "#251a00",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "surface-variant": "#dae2fd",
+                    "inverse-on-surface": "#eef0ff",
+                    "surface-container-low": "#f2f3ff",
+                    "border-subtle": "#E9ECEF"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "margin-tablet": "32px",
+                    "section-gap": "80px",
+                    "margin-desktop": "48px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "caption": ["Inter"],
+                    "headline-xl-mobile": ["Manrope"],
+                    "headline-xl": ["Manrope"],
+                    "headline-md": ["Manrope"],
+                    "display-lg": ["Manrope"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-caps": ["Inter"]
+            },
+            "fontSize": {
+                    "caption": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "headline-xl-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-xl": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased w-[390px] mx-auto relative h-[844px] overflow-hidden border-x border-border-subtle">
+<!-- Background Context (Compressed Main Feed) -->
+<main class="w-full h-full pt-16 pb-24 px-margin-mobile overflow-y-auto">
+<div class="mb-gutter">
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile text-on-surface mb-4">Discover</h1>
+<div class="h-64 rounded-lg border border-border-subtle overflow-hidden bg-surface-container-low relative">
+<img alt="Generative geometric shapes in a bright gallery" class="w-full h-full object-cover" data-alt="A striking digital installation art piece featuring glowing, generative geometric shapes suspended in a vast, minimalist gallery space. The room is illuminated by high-key, soft white lighting that creates a bright, modern light-mode aesthetic. The artwork relies on a sophisticated palette of deep blacks and pristine whites, punctuated by intense accents of vibrant red. The mood is serene yet technologically advanced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPrIaLFJc6bNfKxX8OOLstWkuivCAc3vffRwdi-CanrIJ6uosJ2HsYtRl50s_NEVrrXtmQCnvESkSoj6miD-eoKREM791BkFWvBB86e2gqrtyHDmVXdrcuJ3F7ZIW4XtG1v4VGFy5FQ8uSRWNzpU5Wt136DGO1edFyjkQKVX0wRaVyOvJjXrZsxhCAoRO_p-qKX3CXyGULC4JPj1BowttO2m1FA4CTTYDP3ADqgniAC2P8YlVWUQJ17yKYiGmwdcg1oCXdrgC0Dxkk"/>
+<div class="absolute bottom-0 left-0 w-full p-4 bg-surface-white/80 backdrop-blur-sm border-t border-border-subtle">
+<p class="font-body-md text-body-md font-medium text-on-surface">Minimalist Geometry</p>
+<p class="font-caption text-caption text-text-muted">By Studio N</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="h-48 rounded-lg border border-border-subtle overflow-hidden bg-surface-container-low">
+<img alt="High fashion portrait in white studio" class="w-full h-full object-cover grayscale opacity-80" data-alt="A high-fashion editorial portrait of a woman in a structural, avant-garde white garment, set against a stark, pure white studio background. The lighting is extremely soft and diffuse, eliminating harsh shadows and creating a flat, ethereal aesthetic. The composition emphasizes clean lines, extreme whitespace, and a quiet, sophisticated mood characteristic of premium fashion magazines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArzEMiJTLIY1cmZl9txZPlA5FZE71jb28eAgtFvILqxq_13TwemcCmBV-1Aw4lweKwPMeK2JfA1Bw_Z1XO4ixv6ggTgPawmDjhPO2Nw1S_0zwL4fjKNIBdR_5K9VcFq4ePQt7aEyrYWxgu6EBknmHJo1uUCXDhXlOcudNeqOgDqOECEGmB4EYPGN12SibNQyrpeHk_DyaL8D-qGAab7GfXAjtym7OM6CHAxLs5Mlq-QKLgJ2d0xf88ZUK7zawSM063xFZ0MttiWERt"/>
+</div>
+<div class="h-48 rounded-lg border border-border-subtle overflow-hidden bg-surface-container-low">
+<img alt="Curated interior design corner" class="w-full h-full object-cover opacity-90" data-alt="A meticulously curated interior design corner showcasing a sleek, mid-century modern lounge chair upholstered in neutral beige fabric. It sits on a polished concrete floor next to a slender, matte black floor lamp. The walls are a pristine, gallery-white, and the scene is bathed in natural, diffused daylight. The overall vibe is calm, curated, and intentionally sparse." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg0wrIlucI_n_Mcc4tI0wUHCQ0VTCfybtVU6f1ajV2wqbpLzD_g_SHurxD-z80dpfYjIbAllCT5tS22N4kR14jAGZhXzEa3BKH0YRDRhPuS7DA6wnVy3MRP60GGkTbAvMjq2u9vf0e3G9S2MhK9daYV594xwzdfJKnMuF8PZZ9qQV6LtvEavX6KLRFLN5nP8SQB-IMpdKB2tVovMYB60ww7moMhf9l45WPLJhxq7AC4cryukTHOwOmVo5u4d8nDWH8mH977bUNhD7Q"/>
+</div>
+</div>
+</main>
+<!-- Top App Bar (Mobile) -->
+<header class="fixed top-0 left-0 w-[390px] h-16 bg-surface-white/80 backdrop-blur-md border-b border-border-subtle z-30 flex justify-between items-center px-margin-mobile">
+<div class="font-headline-md text-headline-md font-semibold text-on-surface tracking-tight">
+            Visual Design Journey
+        </div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[24px]">menu</span>
+</button>
+</header>
+<!-- Bottom Tab Bar -->
+<nav class="fixed bottom-0 left-0 w-[390px] h-[88px] bg-surface-white/95 backdrop-blur-md border-t border-border-subtle z-30 flex justify-around items-start pt-3 pb-6 px-2">
+<!-- Home (Active) -->
+<button class="flex flex-col items-center gap-1 w-16 text-accent-soft-purple relative after:content-[''] after:absolute after:-bottom-3 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-accent-soft-purple after:rounded-full">
+<span class="material-symbols-outlined text-[24px]" data-weight="fill">home</span>
+<span class="font-label-caps text-[10px] uppercase tracking-widest mt-1">Home</span>
+</button>
+<!-- Explore -->
+<button class="flex flex-col items-center gap-1 w-16 text-text-muted hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[24px]">search</span>
+<span class="font-label-caps text-[10px] uppercase tracking-widest mt-1">Explore</span>
+</button>
+<!-- Create FAB -->
+<div class="relative w-16 flex justify-center">
+<button class="absolute -top-7 w-14 h-14 bg-accent-soft-purple rounded-full flex items-center justify-center text-surface-white hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[28px]">add</span>
+</button>
+</div>
+<!-- Vibes -->
+<button class="flex flex-col items-center gap-1 w-16 text-text-muted hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[24px]">auto_awesome</span>
+<span class="font-label-caps text-[10px] uppercase tracking-widest mt-1">Vibes</span>
+</button>
+<!-- Profile -->
+<button class="flex flex-col items-center gap-1 w-16 text-text-muted hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="font-label-caps text-[10px] uppercase tracking-widest mt-1">Profile</span>
+</button>
+</nav>
+<!-- Drawer Overlay (Active State) -->
+<div class="fixed inset-0 bg-on-surface/10 backdrop-blur-sm z-40 w-[390px]"></div>
+<!-- Drawer Panel (Sliding from right) -->
+<aside class="fixed top-0 right-0 h-[844px] w-[280px] bg-surface-white border-l border-border-subtle z-50 flex flex-col translate-x-0 transition-transform duration-300 shadow-none">
+<!-- Drawer Header / Close -->
+<div class="h-16 flex items-center justify-end px-4 border-b border-border-subtle/50">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-text-muted hover:text-on-surface hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+</div>
+<!-- User Profile Area -->
+<div class="p-6 border-b border-border-subtle flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden border border-border-subtle bg-surface-container-low">
+<img alt="User Profile Avatar" class="w-full h-full object-cover grayscale" data-alt="A minimalist black and white portrait of a person looking directly at the camera. The background is a flat, seamless white. The lighting is soft and even, highlighting sharp facial features without dramatic contrast. The style emulates a high-end fashion magazine contributor headshot, evoking a sense of quiet professionalism and creative focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4CRGczpNG61KljvtdyVqOm9yLgmDgeD7LkXblG95D0C0uQplhopNW1xfwbOJ2rJ7Iv91f3deFFhE3SObgfkLrVpel-Xdqzgybxz5zSX8_BZh01fnV5oQWomT4G0CGb4s9ee153R0Y0nfvHmMhJ0bKE8FQpIULI03TcPdjfKJCHfU_iJxdZNPwmACcPPBDSpVB-5AyPXDF79vxrdFCCHqAJm1mJRufhjjm5Y_c2PE3V1eIFeAAQ5xJgGXU0u5UeJxXMpWEod_mN6bs"/>
+</div>
+<div>
+<p class="font-body-md text-body-md font-medium text-on-surface leading-tight">Jane Doe</p>
+<p class="font-caption text-caption text-text-muted mt-0.5">@janecurates</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 py-6 px-6 flex flex-col gap-6">
+<a class="font-headline-md text-headline-md text-on-surface hover:text-accent-soft-purple transition-colors flex items-center gap-4" href="#">
+                Explore
+            </a>
+<a class="font-headline-md text-headline-md text-on-surface hover:text-accent-soft-purple transition-colors flex items-center gap-4" href="#">
+                Curators
+            </a>
+<a class="font-headline-md text-headline-md text-on-surface hover:text-accent-soft-purple transition-colors flex items-center gap-4" href="#">
+                Trends
+            </a>
+<div class="h-px w-full bg-border-subtle my-2"></div>
+<a class="font-body-lg text-body-lg text-text-muted hover:text-on-surface transition-colors flex items-center gap-4 mt-2" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+                Settings
+            </a>
+<a class="font-body-lg text-body-lg text-text-muted hover:text-on-surface transition-colors flex items-center gap-4" href="#">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+                Saved Boards
+            </a>
+</nav>
+<!-- Drawer Footer -->
+<div class="p-6 border-t border-border-subtle">
+<button class="w-full h-12 rounded-full border border-border-subtle bg-transparent text-on-surface font-body-md font-medium hover:bg-surface-container-low transition-colors">
+                Sign out
+            </button>
+</div>
+</aside>
+</body></html>

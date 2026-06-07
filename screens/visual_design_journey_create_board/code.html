@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Create Board - Visual Design Journey</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#c5c0ff",
+                        "on-primary-fixed-variant": "#41379b",
+                        "surface-dim": "#d2d9f4",
+                        "accent-soft-purple": "#7F77DD",
+                        "tertiary": "#745800",
+                        "secondary-container": "#e1e3e4",
+                        "on-tertiary-fixed": "#251a00",
+                        "inverse-on-surface": "#eef0ff",
+                        "tertiary-container": "#926f00",
+                        "surface-variant": "#dae2fd",
+                        "secondary-fixed": "#e1e3e4",
+                        "surface-container-highest": "#dae2fd",
+                        "secondary": "#5c5f60",
+                        "secondary-fixed-dim": "#c5c7c8",
+                        "tertiary-fixed": "#ffdf98",
+                        "outline-variant": "#c8c4d4",
+                        "outline": "#787583",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "background": "#faf8ff",
+                        "on-secondary-fixed-variant": "#454748",
+                        "on-primary-container": "#fffbff",
+                        "primary-fixed-dim": "#c5c0ff",
+                        "on-tertiary-fixed-variant": "#5a4300",
+                        "surface": "#faf8ff",
+                        "on-tertiary-container": "#fffbff",
+                        "on-secondary-container": "#626566",
+                        "on-primary-fixed": "#140067",
+                        "primary-fixed": "#e4dfff",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#474552",
+                        "surface-white": "#FFFFFF",
+                        "surface-container": "#eaedff",
+                        "on-secondary-fixed": "#191c1d",
+                        "on-surface": "#131b2e",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "border-subtle": "#E9ECEF",
+                        "surface-container-low": "#f2f3ff",
+                        "primary": "#574eb1",
+                        "surface-tint": "#5951b4",
+                        "inverse-surface": "#283044",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#efc04c",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e2e7ff",
+                        "primary-container": "#7067cc",
+                        "surface-bright": "#faf8ff",
+                        "text-muted": "#454F5E",
+                        "on-background": "#131b2e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "48px",
+                        "section-gap": "80px",
+                        "margin-tablet": "32px",
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "headline-xl": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "headline-xl-mobile": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "caption": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-xl": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-xl-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "caption": ["13px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .custom-border-width { border-width: 0.5px; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop h-20 bg-surface-white/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-border-subtle dark:border-outline-variant flat no shadows">
+<div class="flex items-center gap-8">
+<a class="font-headline-md text-headline-md font-semibold text-on-surface dark:text-inverse-on-surface" href="#">Visual Design Journey</a>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-caps text-label-caps text-on-surface dark:text-inverse-on-surface hover:opacity-80 transition-opacity duration-200" href="#">Explore</a>
+<a class="font-label-caps text-label-caps text-on-surface dark:text-inverse-on-surface hover:opacity-80 transition-opacity duration-200" href="#">Curators</a>
+<a class="font-label-caps text-label-caps text-on-surface dark:text-inverse-on-surface hover:opacity-80 transition-opacity duration-200" href="#">Trends</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex font-label-caps text-label-caps px-6 py-3 rounded-full custom-border-width border-border-subtle text-on-surface hover:bg-surface-dim transition-colors">Sign in</button>
+<button class="font-label-caps text-label-caps bg-accent-soft-purple text-surface-white px-6 py-3 rounded-full hover:opacity-80 transition-opacity">Create Board</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[120px] pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<header class="mb-12">
+<h1 class="font-headline-xl text-headline-xl md:font-display-lg md:text-display-lg text-on-surface mb-4">Create New Board</h1>
+<p class="font-body-lg text-body-lg text-text-muted max-w-2xl">Curate your visual inspiration. Upload images, define the aesthetic, and build your mood board.</p>
+</header>
+<div class="flex flex-col lg:flex-row gap-12">
+<!-- Left Column: Upload Zone & Thumbnails (60%) -->
+<div class="lg:w-[60%] flex flex-col gap-8">
+<!-- Drag & Drop Zone -->
+<div class="w-full h-80 rounded-lg custom-border-width border-dashed border-outline-variant flex flex-col items-center justify-center bg-surface-white hover:border-accent-soft-purple transition-colors cursor-pointer group">
+<div class="bg-surface-dim p-4 rounded-full mb-4 group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-accent-soft-purple text-3xl" style="font-variation-settings: 'FILL' 0;">cloud_upload</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-1">Drag and drop images here</p>
+<p class="font-caption text-caption text-text-muted">or click to browse from your computer</p>
+<p class="font-caption text-caption text-outline mt-4">JPG, PNG, WEBP (Max 5MB per file)</p>
+</div>
+<!-- Uploaded Thumbnails Grid -->
+<div>
+<h3 class="font-label-caps text-label-caps text-text-muted mb-4 uppercase">Uploaded Assets (4)</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="aspect-square rounded-lg bg-surface-container relative group overflow-hidden custom-border-width border-border-subtle">
+<img alt="Abstract painting" class="w-full h-full object-cover" data-alt="A close-up of a minimalist abstract painting featuring sweeping, thick brushstrokes in muted pastel tones against a clean white canvas. The lighting is soft and diffused, highlighting the texture of the paint. The overall aesthetic is calm, modern, and perfectly suited for a sophisticated, light-mode editorial design environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJGR_jE4pSD_S1k2JtLsaTZjLlJK3ciNxD3uUXR6WAn63C1z2L80xJ6QWdGkW3qRmBKs1twb-YsEEol_Uw_65OlGuX2VvXDEoQhPnSF8WVuvFGirzQqI-A9i_X2GGKOun4i1XX8ursivWPQlA7tSHWCUa4Lzeq0hKZZvCZMkjZR3DB6V-sNJlyFqwmbU2CzDJ0_jnRQF2q5MxU9Vog-ctx96Clh0eiu-y4D7TW-3CrG7Nur5ocdqo1KAaBfGhDTEYli0bPXkTW2xIq"/>
+<button class="absolute top-2 right-2 bg-surface-white/90 p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-error text-sm">close</span>
+</button>
+</div>
+<div class="aspect-square rounded-lg bg-surface-container relative group overflow-hidden custom-border-width border-border-subtle">
+<img alt="Modern living room" class="w-full h-full object-cover" data-alt="A bright, airy modern living room interior shot with wide angles. The space features a low-profile white linen sofa, light oak flooring, and a large architectural plant. Natural light pours in through sheer curtains. The style is strictly minimalist and editorial, emphasizing clean lines and generous whitespace within the composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8LjXfW-G2BxKR0n3iJSKcch5N6Pj579upuGtKt-uDvml7yLUqgbituNJzHUb_oJZHr7eLwsD7w5k5vnNvd-u_8_9mBs3CRHDNqH2luKbFdwobvLQ3T-blFFJwv7YvsdQ9Wpcdov-5kIvToErUA0UdBVXbU5ZvRV_2l4XMvwVg1lUcned9BMW5rtkChvOH92xM7uB7-el3c0bRC6iW2I1eoaGr8Oen31wdYSIQN-_6gNPI4536M1x7v01uIrNwxpES7tIMnD41ZgZw"/>
+<button class="absolute top-2 right-2 bg-surface-white/90 p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-error text-sm">close</span>
+</button>
+</div>
+<div class="aspect-square rounded-lg bg-surface-container relative group overflow-hidden custom-border-width border-border-subtle">
+<img alt="Architecture detail" class="w-full h-full object-cover" data-alt="Detail shot of modernist architecture featuring clean geometric lines and stark shadows cast against a smooth white concrete wall. The composition is highly structured and asymmetric, evoking a sense of calm precision. The color palette is strictly neutral, focusing on light and form, fitting perfectly into a premium design gallery aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZfrTIF6wh6GC3bbl6tIi6qdw-0CY3d9UYd9ve63076gS9cj1eIBr1EQqLZJuNmILgcm6f91hb2GrR4bvfuXuwPF_NBHlKEXpcTXIZg1JXaH7Et020baHIy6FSW4I7M2-U_ZRFor1icTsP1geh2Izak0XPr-zjYC0A8Bgv5Beid-B7S4ljL47zIX73VSfuUBUEtIu-m12qdDhT4d-yZ5lMVo-dMwEnC4dgde1-wI29UrwSdMgoxsGyAVB2WEAioVaCmosPDNP1U3cy"/>
+<button class="absolute top-2 right-2 bg-surface-white/90 p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-error text-sm">close</span>
+</button>
+</div>
+<div class="aspect-square rounded-lg bg-surface-container relative group overflow-hidden custom-border-width border-border-subtle flex items-center justify-center border-dashed cursor-pointer hover:border-accent-soft-purple transition-colors">
+<span class="material-symbols-outlined text-outline">add</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Form Fields (40%) -->
+<div class="lg:w-[40%] flex flex-col gap-8">
+<div class="flex flex-col gap-6 bg-surface-white p-8 rounded-lg custom-border-width border-border-subtle">
+<!-- Title Input -->
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-text-muted uppercase" for="board-title">Board Title</label>
+<input class="w-full px-4 py-3 rounded-md custom-border-width border-border-subtle focus:border-accent-soft-purple focus:ring-0 font-body-md text-body-md bg-surface-white text-on-surface placeholder-outline-variant outline-none transition-colors" id="board-title" placeholder="e.g. Minimalist Spring Campaign" type="text"/>
+</div>
+<!-- Description Input -->
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-text-muted uppercase" for="board-desc">Description</label>
+<textarea class="w-full px-4 py-3 rounded-md custom-border-width border-border-subtle focus:border-accent-soft-purple focus:ring-0 font-body-md text-body-md bg-surface-white text-on-surface placeholder-outline-variant outline-none transition-colors resize-none" id="board-desc" placeholder="Briefly describe the aesthetic direction..." rows="4"></textarea>
+</div>
+<!-- Style Tags -->
+<div class="flex flex-col gap-3">
+<label class="font-label-caps text-label-caps text-text-muted uppercase">Style Tags</label>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 rounded-full bg-accent-soft-purple text-surface-white font-label-caps text-label-caps">Minimalist</button>
+<button class="px-4 py-2 rounded-full bg-surface-container text-on-surface font-label-caps text-label-caps hover:bg-border-subtle transition-colors">Editorial</button>
+<button class="px-4 py-2 rounded-full bg-surface-container text-on-surface font-label-caps text-label-caps hover:bg-border-subtle transition-colors">Architecture</button>
+<button class="px-4 py-2 rounded-full bg-surface-container text-on-surface font-label-caps text-label-caps hover:bg-border-subtle transition-colors">Interior</button>
+<button class="px-4 py-2 rounded-full bg-surface-container text-on-surface font-label-caps text-label-caps hover:bg-border-subtle transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">add</span> Add Tag
+                            </button>
+</div>
+</div>
+<!-- Color Palette -->
+<div class="flex flex-col gap-3 pt-4 border-t border-border-subtle custom-border-width">
+<div class="flex justify-between items-center">
+<label class="font-label-caps text-label-caps text-text-muted uppercase">Extracted Palette</label>
+<button class="font-caption text-caption text-accent-soft-purple hover:opacity-80">Refresh</button>
+</div>
+<div class="flex gap-3">
+<div class="w-10 h-10 rounded-full bg-[#E8E6E1] custom-border-width border-border-subtle shadow-sm cursor-pointer" title="#E8E6E1"></div>
+<div class="w-10 h-10 rounded-full bg-[#B5B0A1] custom-border-width border-border-subtle shadow-sm cursor-pointer" title="#B5B0A1"></div>
+<div class="w-10 h-10 rounded-full bg-[#6D7275] custom-border-width border-border-subtle shadow-sm cursor-pointer" title="#6D7275"></div>
+<div class="w-10 h-10 rounded-full bg-[#2C3032] custom-border-width border-border-subtle shadow-sm cursor-pointer" title="#2C3032"></div>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center custom-border-width border-dashed border-outline-variant cursor-pointer hover:border-accent-soft-purple transition-colors">
+<span class="material-symbols-outlined text-outline text-sm">add</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col sm:flex-row gap-4 mt-auto">
+<button class="flex-1 font-label-caps text-label-caps bg-accent-soft-purple text-surface-white px-6 py-4 rounded-full hover:opacity-80 transition-opacity">Publish Board</button>
+<button class="flex-1 font-label-caps text-label-caps bg-transparent text-on-surface px-6 py-4 rounded-full custom-border-width border-border-subtle hover:bg-surface-dim transition-colors">Save Draft</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap px-margin-desktop flex flex-col md:flex-row justify-between items-center bg-surface dark:bg-inverse-surface border-t border-border-subtle dark:border-outline-variant flat no shadows">
+<div class="font-headline-md text-headline-md text-on-surface dark:text-inverse-on-surface mb-6 md:mb-0">
+            Visual Design Journey
+        </div>
+<div class="flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
+<a class="font-label-caps text-label-caps text-text-muted dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-caps text-label-caps text-text-muted dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-caps text-label-caps text-text-muted dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Archive</a>
+<a class="font-label-caps text-label-caps text-text-muted dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Contact</a>
+</div>
+<div class="font-body-md text-body-md text-text-muted dark:text-on-surface-variant">
+            © 2024 Visual Design Journey. All rights reserved.
+        </div>
+</footer>
+</body></html>

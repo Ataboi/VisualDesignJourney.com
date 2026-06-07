@@ -1,0 +1,68 @@
+@extends('layouts.app')
+@section('title', 'Font Pairings')
+@section('meta_description', 'Curated heading and body font combinations for modern web design. Filter by style: editorial, minimal, bold, elegant.')
+
+@push('fonts')
+@php
+$fontFamilies = $pairings->flatMap(fn($p) => [
+    urlencode($p->heading_font) . ':wght@' . $p->heading_weight,
+    urlencode($p->body_font) . ':wght@' . $p->body_weight,
+])->unique()->values();
+@endphp
+@if($fontFamilies->isNotEmpty())
+<link href="https://fonts.googleapis.com/css2?{{ $fontFamilies->map(fn($f) => 'family=' . $f)->implode('&') }}&display=swap" rel="stylesheet">
+@endif
+@endpush
+
+@section('content')
+<div class="vk-container" style="padding-top:64px;padding-bottom:64px;">
+
+    {{-- Header --}}
+    <div style="margin-bottom:48px;">
+        <p style="font-size:11px;font-weight:600;color:#787583;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 10px;">Typography</p>
+        <h1 class="page-title" style="margin:0 0 12px;">Font Pairings</h1>
+        <p style="font-size:16px;color:#454F5E;margin:0;">Curated heading + body combinations that work beautifully together.</p>
+    </div>
+
+    {{-- Search --}}
+    <div style="margin-bottom:24px;">
+        <form method="GET" style="display:flex;gap:10px;max-width:480px;">
+            <div style="flex:1;display:flex;align-items:center;background-color:#FFFFFF;border:.5px solid #E9ECEF;border-radius:10px;padding:0 12px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#787583" stroke-width="2" stroke-linecap="round" style="flex-shrink:0;margin-right:8px;">
+                    <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+                <input type="text" name="search" value="{{ request('search') }}" placeholder="Search fonts..." style="flex:1;background:transparent;border:none;outline:none;font-size:14px;color:#131B2E;padding:10px 0;font-family:inherit;" />
+            </div>
+            <button type="submit" class="btn-secondary" style="white-space:nowrap;padding:10px 18px;">Search</button>
+        </form>
+    </div>
+
+    {{-- Style filters --}}
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:48px;align-items:center;">
+        <span style="font-size:11px;font-weight:600;color:#787583;text-transform:uppercase;letter-spacing:0.06em;margin-right:4px;">Style</span>
+        <a href="{{ route('font-pairings.index', request()->except(['style','page'])) }}" class="filter-pill {{ !request('style') ? 'active' : '' }}">All</a>
+        @foreach(['editorial', 'minimal', 'bold', 'elegant', 'modern', 'playful'] as $style)
+        <a href="{{ route('font-pairings.index', array_merge(request()->except('page'), ['style' => $style])) }}" class="filter-pill {{ request('style') === $style ? 'active' : '' }}">{{ ucfirst($style) }}</a>
+        @endforeach
+        @if(request()->hasAny(['style','search','tag']))
+        <a href="{{ route('font-pairings.index') }}" style="font-size:12px;color:#FF4D4D;text-decoration:none;margin-left:8px;" onmouseover="this.style.color='#FF7A7A'" onmouseout="this.style.color='#FF4D4D'">Clear filters ×</a>
+        @endif
+    </div>
+
+    {{-- Grid --}}
+    @if($pairings->isEmpty())
+    <div class="empty-state">
+        <div class="empty-state-icon">Aa</div>
+        <p class="empty-state-title">No font pairings found.</p>
+        <p class="empty-state-desc">Try another style or <a href="{{ route('font-pairings.index') }}" style="color:#574EB1;text-decoration:none;">clear filters</a>.</p>
+    </div>
+    @else
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        @foreach($pairings as $pair)
+            @include('partials.font-card', ['pair' => $pair])
+        @endforeach
+    </div>
+    <div style="margin-top:40px;">{{ $pairings->links() }}</div>
+    @endif
+</div>
+@endsection

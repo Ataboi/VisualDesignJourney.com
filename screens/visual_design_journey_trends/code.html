@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trending Now - Visual Design Journey</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#41379b",
+                        "secondary-container": "#e1e3e4",
+                        "surface-variant": "#dae2fd",
+                        "on-background": "#131b2e",
+                        "text-muted": "#454F5E",
+                        "on-secondary-container": "#626566",
+                        "accent-soft-purple": "#7F77DD",
+                        "outline-variant": "#c8c4d4",
+                        "inverse-on-surface": "#eef0ff",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f2f3ff",
+                        "on-tertiary-fixed-variant": "#5a4300",
+                        "error": "#ba1a1a",
+                        "border-subtle": "#E9ECEF",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#131b2e",
+                        "surface-tint": "#5951b4",
+                        "outline": "#787583",
+                        "inverse-primary": "#c5c0ff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#574eb1",
+                        "on-primary-fixed": "#140067",
+                        "on-tertiary-fixed": "#251a00",
+                        "surface-dim": "#d2d9f4",
+                        "background": "#faf8ff",
+                        "primary-fixed": "#e4dfff",
+                        "on-secondary-fixed-variant": "#454748",
+                        "on-tertiary-container": "#fffbff",
+                        "inverse-surface": "#283044",
+                        "primary-fixed-dim": "#c5c0ff",
+                        "tertiary-fixed-dim": "#efc04c",
+                        "secondary-fixed": "#e1e3e4",
+                        "secondary": "#5c5f60",
+                        "surface-container": "#eaedff",
+                        "on-error-container": "#93000a",
+                        "surface": "#faf8ff",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#faf8ff",
+                        "surface-container-highest": "#dae2fd",
+                        "surface-white": "#FFFFFF",
+                        "surface-container-high": "#e2e7ff",
+                        "secondary-fixed-dim": "#c5c7c8",
+                        "on-secondary-fixed": "#191c1d",
+                        "on-surface-variant": "#474552",
+                        "tertiary-container": "#926f00",
+                        "primary-container": "#7067cc",
+                        "tertiary": "#745800",
+                        "tertiary-fixed": "#ffdf98",
+                        "on-primary-container": "#fffbff",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "80px",
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "margin-tablet": "32px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-xl-mobile": ["Manrope"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Manrope"],
+                        "caption": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Manrope"],
+                        "headline-xl": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-xl-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "caption": ["13px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-xl": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop h-20 bg-surface-white/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-border-subtle dark:border-outline-variant flat no shadows font-headline-md text-headline-md. Navigation: font-label-caps text-label-caps. docked full-width top-0">
+<div class="flex items-center space-x-8">
+<span class="font-headline-md text-headline-md font-semibold text-on-surface dark:text-inverse-on-surface">Visual Design Journey</span>
+<div class="hidden md:flex space-x-6">
+<a class="text-on-surface dark:text-inverse-on-surface hover:opacity-80 transition-opacity duration-200" href="#">Explore</a>
+<a class="text-on-surface dark:text-inverse-on-surface hover:opacity-80 transition-opacity duration-200" href="#">Curators</a>
+<a class="text-accent-soft-purple dark:text-inverse-primary relative after:content-[''] after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-accent-soft-purple after:rounded-full hover:opacity-80 transition-opacity duration-200" href="#">Trends</a>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<button class="bg-transparent border border-border-subtle text-on-surface rounded-full px-4 py-2 font-label-caps text-label-caps hover:bg-surface-container-low transition-colors duration-200">Sign in</button>
+<button class="bg-accent-soft-purple text-surface-white rounded-full px-4 py-2 font-label-caps text-label-caps hover:opacity-80 transition-opacity duration-200">Create Board</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-32 pb-section-gap px-margin-desktop max-w-container-max mx-auto">
+<!-- Header -->
+<header class="mb-16">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-4">Trending Now</h1>
+<p class="font-body-lg text-body-lg text-text-muted">What the design community is obsessing over this week.</p>
+</header>
+<!-- Top Trends Hero Section -->
+<section class="mb-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Trend Card 1 -->
+<div class="relative group cursor-pointer border border-border-subtle rounded-lg overflow-hidden hover:border-accent-soft-purple transition-colors duration-200">
+<div class="absolute top-4 left-4 z-10 font-display-lg text-display-lg text-surface-white/50 mix-blend-overlay">01</div>
+<div class="aspect-video w-full relative overflow-hidden bg-surface-container-low">
+<img alt="Trending design style" class="w-full h-full object-cover" data-alt="A striking minimalist editorial interior design showcasing severe geometric furniture and expansive white walls. The lighting is harsh yet pristine, creating deep shadows that emphasize form over texture. A dominant focal point features a sculptural, matte-black coffee table resting on a completely unadorned concrete floor. The overall aesthetic is severe, ultra-modern, and strictly monochromatic with occasional sharp, saturated accent pieces in cobalt blue." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjhjOCySGkBHq_SSyoRCWL0EIouQUoCQRcMQLSlwkT6HpI_jkMK5xenU6FP3JJYmMKzCuAXffUh-eU2SbF1z_4YsDZ2kAZFG6Ahxekzni2xqqkHEtwskAKVuHKsj56DorEn7nz6xKntrg4DSUhO7QNo2NC55dvQ9WgHWl-NcthIU0xFHDcKVodWolus6rfNdalv9TdRbRe4W5_fYOhP7VPhahCfkJHkakwWjTuj2JzupTAicgC1_TbZ_sEuwHNCuHnbTWOvUGUBwQ0"/>
+</div>
+<div class="p-4 bg-surface">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-surface-container-low font-label-caps text-label-caps px-3 py-1 rounded-full text-text-muted">NEO-BRUTALISM</span>
+<div class="flex items-center text-text-muted font-caption text-caption space-x-1">
+<span class="material-symbols-outlined" data-icon="favorite" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span>24.5k</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Raw Concrete &amp; Saturated Accent Shapes</h3>
+</div>
+</div>
+<!-- Trend Card 2 -->
+<div class="relative group cursor-pointer border border-border-subtle rounded-lg overflow-hidden hover:border-accent-soft-purple transition-colors duration-200">
+<div class="absolute top-4 left-4 z-10 font-display-lg text-display-lg text-surface-white/50 mix-blend-overlay">02</div>
+<div class="aspect-video w-full relative overflow-hidden bg-surface-container-low">
+<img alt="Trending design style" class="w-full h-full object-cover" data-alt="A serene, minimalist living space defined by organic curves and natural textures. Soft, diffused daylight filters through sheer linen curtains, casting gentle gradients across pale oak flooring. The furniture consists of low-profile, cloud-like seating upholstered in unbleached boucle. The palette is entirely composed of warm neutrals, creams, and subtle taupes, avoiding any sharp contrasts or artificial hues to maintain a calming, grounded atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv12RnpriaPsNPEkuo1FvcaFwCPQfaiqxaS_jqj2GfbxhYgl9WAttw6ojO2awtAy4Y3FFRsO4ngwDe5IUZaVyvMoErQCfQJWvsdTu7i3hnuFAitVdIi7jqzmF_daVDkrrnXRZH-cmuILhCYZJGT0nhoabhfTXGkDSM0HjPaa_uOgf1n0Z9wAEZUFp1g6BjpbdN-JblePqGzcBOCr-8vN1B_2UQQXUCyHxZJ2HWuLgFFwpNC76WdeqOGMJqbfS_qzVQjvYCRXFNl4Pj"/>
+</div>
+<div class="p-4 bg-surface">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-surface-container-low font-label-caps text-label-caps px-3 py-1 rounded-full text-text-muted">ORGANIC MODERN</span>
+<div class="flex items-center text-text-muted font-caption text-caption space-x-1">
+<span class="material-symbols-outlined" data-icon="favorite" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span>18.2k</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Curved Forms &amp; Tactile Boucle Surfaces</h3>
+</div>
+</div>
+<!-- Trend Card 3 -->
+<div class="relative group cursor-pointer border border-border-subtle rounded-lg overflow-hidden hover:border-accent-soft-purple transition-colors duration-200">
+<div class="absolute top-4 left-4 z-10 font-display-lg text-display-lg text-surface-white/50 mix-blend-overlay">03</div>
+<div class="aspect-video w-full relative overflow-hidden bg-surface-container-low">
+<img alt="Trending design style" class="w-full h-full object-cover" data-alt="An abstract, high-contrast digital composition utilizing precise typography as the main structural element. Large-scale, sans-serif letterforms intersect and overlap, creating dynamic negative spaces. The color scheme is restricted to pure black, stark white, and a singular, vibrant electric yellow accent. The layout is intentionally unbalanced yet meticulously gridded, reflecting a sophisticated, contemporary approach to Swiss graphic design principles." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhTTmX02G477jbLVPP41jLqOGmNWP9OrMAOFdf0CL1SbEUOvYJGy7H7Gv4BtQ9aZwRThTm5CAf455NYk94ieIZpl-NtTkSXHQp1J73rmIa1qizU-rs0Y3TxqWdRAcia9xeoxP2sgbag4aJEZAFmg47vXFDm1dnBYELwnt3D7VkgnkclgaosyfdCCr-b3gGty0TmWe6ui0ybmg8f6pDFUJyGwjZzZElQvuEwfodM6pewLyZJTFDxrG474hUJyKBBcIfn9v9SIJYFsgc"/>
+</div>
+<div class="p-4 bg-surface">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-surface-container-low font-label-caps text-label-caps px-3 py-1 rounded-full text-text-muted">TYPOGRAPHIC</span>
+<div class="flex items-center text-text-muted font-caption text-caption space-x-1">
+<span class="material-symbols-outlined" data-icon="favorite" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span>15.9k</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Maximalist Type &amp; Negative Space Control</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Rising Styles -->
+<section class="mb-section-gap">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline-md text-headline-md text-on-surface">Rising Styles</h2>
+<button class="font-label-caps text-label-caps text-accent-soft-purple hover:opacity-80 transition-opacity">View All</button>
+</div>
+<div class="flex space-x-4 overflow-x-auto pb-4 hide-scrollbar">
+<div class="flex-shrink-0 flex items-center bg-surface-container-low border border-border-subtle rounded-full px-4 py-2 hover:border-accent-soft-purple cursor-pointer transition-colors">
+<span class="font-label-caps text-label-caps text-on-surface mr-2">BAUHAUS REVIVAL</span>
+<span class="bg-surface-white text-text-muted font-caption text-caption px-2 py-0.5 rounded-full">1.2k</span>
+</div>
+<div class="flex-shrink-0 flex items-center bg-surface-container-low border border-border-subtle rounded-full px-4 py-2 hover:border-accent-soft-purple cursor-pointer transition-colors">
+<span class="font-label-caps text-label-caps text-on-surface mr-2">Y2K CHROME</span>
+<span class="bg-surface-white text-text-muted font-caption text-caption px-2 py-0.5 rounded-full">850</span>
+</div>
+<div class="flex-shrink-0 flex items-center bg-surface-container-low border border-border-subtle rounded-full px-4 py-2 hover:border-accent-soft-purple cursor-pointer transition-colors">
+<span class="font-label-caps text-label-caps text-on-surface mr-2">JAPANDI MINIMAL</span>
+<span class="bg-surface-white text-text-muted font-caption text-caption px-2 py-0.5 rounded-full">3.4k</span>
+</div>
+<div class="flex-shrink-0 flex items-center bg-surface-container-low border border-border-subtle rounded-full px-4 py-2 hover:border-accent-soft-purple cursor-pointer transition-colors">
+<span class="font-label-caps text-label-caps text-on-surface mr-2">ACID GRAPHICS</span>
+<span class="bg-surface-white text-text-muted font-caption text-caption px-2 py-0.5 rounded-full">620</span>
+</div>
+<div class="flex-shrink-0 flex items-center bg-surface-container-low border border-border-subtle rounded-full px-4 py-2 hover:border-accent-soft-purple cursor-pointer transition-colors">
+<span class="font-label-caps text-label-caps text-on-surface mr-2">SCANDI WARMTH</span>
+<span class="bg-surface-white text-text-muted font-caption text-caption px-2 py-0.5 rounded-full">2.1k</span>
+</div>
+<div class="flex-shrink-0 flex items-center bg-surface-container-low border border-border-subtle rounded-full px-4 py-2 hover:border-accent-soft-purple cursor-pointer transition-colors">
+<span class="font-label-caps text-label-caps text-on-surface mr-2">RETRO FUTURISM</span>
+<span class="bg-surface-white text-text-muted font-caption text-caption px-2 py-0.5 rounded-full">940</span>
+</div>
+</div>
+</section>
+<!-- This Week's Most Saved -->
+<section>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-8">This Week's Most Saved</h2>
+<div class="columns-1 sm:columns-2 lg:columns-3 gap-gutter space-y-gutter">
+<!-- Masonry Card 1 -->
+<div class="break-inside-avoid border border-border-subtle rounded-lg overflow-hidden hover:border-accent-soft-purple transition-colors duration-200">
+<div class="w-full bg-surface-container-low">
+<img alt="Minimalist poster" class="w-full h-auto object-cover" data-alt="A clean, minimalist poster design featuring a single, large, sans-serif letter 'A' placed off-center against a stark white background. The letterform is rendered in a deep, matte navy blue. The composition is highly asymmetric, utilizing vast amounts of negative space to create a sense of tension and balance typical of high-end editorial design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtxfG_pBH3G9kbAeslaPnQtYimj9doPCXBTcoEZNKdGIPyxoPlsyQsuKxsB5ns6A0vIYxYjmvfYZIcgi1h0b0ZaM3oNRGipmpg0sMBdrMpewbPyuMoqsZ6tJQ0RRnYnM-eQWe33xsQGg4Ubej5KgmY7ykYKd8-py1qlSmkbfllDO-XeCwXd3Q7lW_CZ8L8PA4tbrgkMPbct5g8LcV-u0-rujRxmLTzWA3UH-d8POlW5CXZIxr3FcdCaFsBd9vKBVw9atc5Rh-iFDTT"/>
+</div>
+<div class="p-4">
+<h4 class="font-body-md text-body-md text-on-surface mb-1">Typography Study 04</h4>
+<p class="font-caption text-caption text-text-muted">by Studio N</p>
+</div>
+</div>
+<!-- Masonry Card 2 -->
+<div class="break-inside-avoid border border-border-subtle rounded-lg overflow-hidden hover:border-accent-soft-purple transition-colors duration-200">
+<div class="w-full bg-surface-container-low aspect-square">
+<img alt="Interior moodboard" class="w-full h-full object-cover" data-alt="A serene interior design moodboard composed of layered material swatches. A large piece of unbleached raw linen fabric serves as the backdrop, upon which a small, smooth ceramic bowl in matte white rests. Beside the bowl, a rough-hewn rectangular block of pale travertine stone provides textural contrast. The lighting is soft and directional, casting gentle shadows that emphasize the varied surfaces." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQtTpjaWoDOkztjJ6Lp4sdRjQCteVZTIFubRIn6rZBjvuvNahGA0eIM_bEfICTBPEwL_t0mls1i_bs4hNIa_3aFkR3liOWTwXqdFPijaL2IEqLHpSitKYYa5zyG4u3t8wow05f2dn5YnPlBO-qTVuCuvwmfmMlYaZGu0rXBZvPr5uYe0sUjRp131tLiExzB-eN1jDL70vDE2lnXrhBSwFs7Yh2sXnfYAnu1r8GTxpswUXjqGkqfXlwBFRI6fZSLomFEi0qwg6GRnhQ"/>
+</div>
+<div class="p-4">
+<h4 class="font-body-md text-body-md text-on-surface mb-1">Tactile Materials</h4>
+<p class="font-caption text-caption text-text-muted">by Elena R.</p>
+</div>
+</div>
+<!-- Masonry Card 3 -->
+<div class="break-inside-avoid border border-border-subtle rounded-lg overflow-hidden hover:border-accent-soft-purple transition-colors duration-200">
+<div class="w-full bg-surface-container-low">
+<img alt="Abstract painting" class="w-full h-auto object-cover" data-alt="An abstract painting composed of sweeping, gestural strokes in muted earth tones. Broad swathes of ochre, burnt sienna, and olive green overlap dynamically on a large, unprimed canvas. The application is thick and textured in some areas, while thin and washed out in others, creating a sense of depth and movement. The overall feeling is raw, expressive, and deeply organic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ0qKW9q06L6m-Br4PClzhfE7_xVMGpQqTnkrpRsP0hEWYhLE7MzkZZKkvE8YMB1Cxn79c9esK8DfwtfuFQdqzzPMXMr3Sx44sE-8ASEbZez0eoS3hqQtXD5UcPfNQSQINleNWiUCL5ZDXyeyolNe9klJvY2eAAOw6wCeNoq25pIpWDjKHBFrQgZQnJLewJb4ymw26fLkBumMH5jibUPQYA_WGQgqCPTqjEsXIgWC_lxprHR_3l9pTR-2l_TCOg4NrD4wa2pbTByq0"/>
+</div>
+<div class="p-4">
+<h4 class="font-body-md text-body-md text-on-surface mb-1">Earthy Gestures</h4>
+<p class="font-caption text-caption text-text-muted">by M. Rossi</p>
+</div>
+</div>
+<!-- Masonry Card 4 -->
+<div class="break-inside-avoid border border-border-subtle rounded-lg overflow-hidden hover:border-accent-soft-purple transition-colors duration-200">
+<div class="w-full bg-surface-container-low aspect-video">
+<img alt="Architectural detail" class="w-full h-full object-cover" data-alt="A close-up architectural photograph focusing on the intersection of two building materials. A smooth, meticulously finished concrete wall meets a panel of warm, horizontally slatted cedar wood. The sunlight strikes the surfaces at a sharp angle, highlighting the subtle grain of the wood and the flawless finish of the concrete. The composition is strictly geometric and focused on material honesty." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDika02xes1qQt_oul5k4G29pVEIcLgR2bUGaGF20LzaVZRAUxgFsjB0I5tZcGta0gKpKn5JqDoVBqP2Q_z0JbEt51sgk-sOI86CnIKCXcMrNknjb1vHZ8I9br3nCuqEN97twjgiIApUnxwnLqtaXRxlUg114CyyV2rAm2uTpvht934Qxqe0L-0qn4m6g2Wd7g_Du1MSEuHii35849mww4mCaO7_MKfUkTbpkjfLS_pNpEEuzEBZFPZlbLToZnE5fKnqM1mXtFFxek2"/>
+</div>
+<div class="p-4">
+<h4 class="font-body-md text-body-md text-on-surface mb-1">Concrete &amp; Timber</h4>
+<p class="font-caption text-caption text-text-muted">by ArchDaily Curators</p>
+</div>
+</div>
+<!-- Masonry Card 5 -->
+<div class="break-inside-avoid border border-border-subtle rounded-lg overflow-hidden hover:border-accent-soft-purple transition-colors duration-200">
+<div class="w-full bg-surface-container-low">
+<img alt="Graphic layout" class="w-full h-auto object-cover" data-alt="A sophisticated digital interface design featuring a bento box layout. Several differently sized rectangular panels, with very thin light gray borders, are arranged on a stark white background. The panels contain minimalist data visualizations, sparse typography, and small, high-contrast monochrome photographs. The design prioritizes extreme whitespace, clarity, and a clinical, high-end aesthetic devoid of any shadows or gradients." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBOVz2f1NSub44rLhQo-CxWRZmnadDqNFar8UHTFkocDyiOGL06CR03RsvyMAghqZRqhUMk9iUHS-J9HW1TpEl8xgTC4nvazr616RBYrID0Nro-bIWBmEecbwEFheIBTmSf1sUxnIH1d55eARG7meBQL_364F85iATYhkKdI1amWopPU4eATb4BlRhaR9OX3TUQD4hjbHH7LhccPbSZU9rEalQNUdjSDzBiLALYvFkQqku5Djrl4a6i-CSOga-SUd4qQBvrZ38i6uA"/>
+</div>
+<div class="p-4">
+<h4 class="font-body-md text-body-md text-on-surface mb-1">Dashboard Concept</h4>
+<p class="font-caption text-caption text-text-muted">by UI/UX Lab</p>
+</div>
+</div>
+<!-- Masonry Card 6 -->
+<div class="break-inside-avoid border border-border-subtle rounded-lg overflow-hidden hover:border-accent-soft-purple transition-colors duration-200">
+<div class="w-full bg-surface-container-low aspect-square">
+<img alt="3D Render" class="w-full h-full object-cover" data-alt="A smooth, surreal 3D render of soft geometric primitives floating in an ethereal void. Plump spheres, cylinders, and rounded cubes are rendered with a highly realistic, matte silicone texture in pastel shades of lilac, mint, and peach. The lighting is diffused and omnipresent, eliminating harsh shadows and giving the entire scene a dreamlike, synthetic quality typical of modern digital art trends." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLS9Py0ftx2YWVeDQk0jg9E5tKHaomOidyvACt1gk-wYxlSgSWlRT2LcSDsxx9epiYZGyQ9p--s3qxJtuDlg2g8hCdVl7PjF7MXJoNyFyIIplMe-tw1m7UbqLDQGJxgF43EYqFgMvaPAm4NkR-Q1onB8-nEpRsYNwPlcanyJZvJHtgqN_MOsGbCaItyCjPS0gXSO5lP3Bmt6E5rcrgzvcThHGIek8aljNEp6dlzZuRsDN08tEhoeDR-APpG4dmeC3qr4JuaknQqm_x"/>
+</div>
+<div class="p-4">
+<h4 class="font-body-md text-body-md text-on-surface mb-1">Soft Primitives</h4>
+<p class="font-caption text-caption text-text-muted">by Rendered Things</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap px-margin-desktop flex flex-col md:flex-row justify-between items-center bg-surface dark:bg-inverse-surface border-t border-border-subtle dark:border-outline-variant flat no shadows">
+<span class="font-headline-md text-headline-md text-on-surface dark:text-inverse-on-surface mb-4 md:mb-0">Visual Design Journey</span>
+<p class="font-body-md text-body-md text-text-muted dark:text-on-surface-variant mb-4 md:mb-0 text-center md:text-left">© 2024 Visual Design Journey. All rights reserved.</p>
+<div class="flex space-x-6">
+<a class="font-label-caps text-label-caps text-text-muted dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-caps text-label-caps text-text-muted dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-caps text-label-caps text-text-muted dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Archive</a>
+<a class="font-label-caps text-label-caps text-text-muted dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Contact</a>
+</div>
+</footer>
+</body></html>

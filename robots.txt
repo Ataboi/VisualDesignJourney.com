@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /config/
+Disallow: /includes/
+Disallow: /cron/
+Disallow: /install.php
+Disallow: /?page=
+Disallow: /search.php?*
+
+# Sitemap
+Sitemap: https://visualdesignjourney.com/sitemap.xml
+Sitemap: https://visualdesignjourney.com/sitemap-posts.xml
+Sitemap: https://visualdesignjourney.com/sitemap-pages.xml
+Sitemap: https://visualdesignjourney.com/sitemap-boards.xml
+
+# Crawl delay (be polite)
+Crawl-delay: 2

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>What styles speak to you? - Visual Design Journey</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary": "#5c5f60",
+                      "outline-variant": "#c8c4d4",
+                      "on-primary-fixed-variant": "#41379b",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed-variant": "#5a4300",
+                      "on-secondary-container": "#626566",
+                      "secondary-fixed-dim": "#c5c7c8",
+                      "on-tertiary-container": "#fffbff",
+                      "on-surface": "#131b2e",
+                      "tertiary-fixed": "#ffdf98",
+                      "surface-container": "#eaedff",
+                      "on-primary-fixed": "#140067",
+                      "on-secondary": "#ffffff",
+                      "secondary-container": "#e1e3e4",
+                      "error": "#ba1a1a",
+                      "accent-soft-purple": "#7F77DD",
+                      "error-container": "#ffdad6",
+                      "surface-dim": "#d2d9f4",
+                      "surface-bright": "#faf8ff",
+                      "primary-container": "#7067cc",
+                      "on-background": "#131b2e",
+                      "surface": "#faf8ff",
+                      "on-secondary-fixed": "#191c1d",
+                      "inverse-primary": "#c5c0ff",
+                      "outline": "#787583",
+                      "primary-fixed-dim": "#c5c0ff",
+                      "on-primary-container": "#fffbff",
+                      "on-surface-variant": "#474552",
+                      "surface-white": "#FFFFFF",
+                      "primary-fixed": "#e4dfff",
+                      "inverse-surface": "#283044",
+                      "surface-container-high": "#e2e7ff",
+                      "secondary-fixed": "#e1e3e4",
+                      "text-muted": "#454F5E",
+                      "tertiary": "#745800",
+                      "on-secondary-fixed-variant": "#454748",
+                      "surface-tint": "#5951b4",
+                      "primary": "#574eb1",
+                      "tertiary-fixed-dim": "#efc04c",
+                      "surface-container-highest": "#dae2fd",
+                      "on-error": "#ffffff",
+                      "tertiary-container": "#926f00",
+                      "background": "#faf8ff",
+                      "on-tertiary-fixed": "#251a00",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "surface-variant": "#dae2fd",
+                      "inverse-on-surface": "#eef0ff",
+                      "surface-container-low": "#f2f3ff",
+                      "border-subtle": "#E9ECEF"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "gutter": "24px",
+                      "margin-tablet": "32px",
+                      "section-gap": "80px",
+                      "margin-desktop": "48px",
+                      "container-max": "1440px"
+              },
+              "fontFamily": {
+                      "caption": [
+                              "Inter", "sans-serif"
+                      ],
+                      "headline-xl-mobile": [
+                              "Manrope", "sans-serif"
+                      ],
+                      "headline-xl": [
+                              "Manrope", "sans-serif"
+                      ],
+                      "headline-md": [
+                              "Manrope", "sans-serif"
+                      ],
+                      "display-lg": [
+                              "Manrope", "sans-serif"
+                      ],
+                      "body-md": [
+                              "Inter", "sans-serif"
+                      ],
+                      "body-lg": [
+                              "Inter", "sans-serif"
+                      ],
+                      "label-caps": [
+                              "Inter", "sans-serif"
+                      ]
+              },
+              "fontSize": {
+                      "caption": [
+                              "13px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-xl-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-xl": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col font-body-md text-body-md antialiased selection:bg-accent-soft-purple selection:text-white">
+<!-- Top Progress Indicator -->
+<header class="w-full px-margin-mobile md:px-margin-desktop py-6 flex flex-col items-center sticky top-0 bg-surface/90 backdrop-blur-md z-10 border-b-[0.5px] border-border-subtle">
+<span class="font-label-caps text-label-caps text-secondary uppercase mb-3 tracking-widest">Step 2 of 3</span>
+<div class="w-full max-w-[300px] h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-accent-soft-purple w-2/3 rounded-full transition-all duration-500 ease-in-out"></div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-12 pb-32">
+<!-- Headers -->
+<div class="text-center mb-16 max-w-2xl">
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile md:font-headline-xl md:text-headline-xl text-on-surface mb-4">What styles speak to you?</h1>
+<p class="font-body-lg text-body-lg text-secondary">Pick at least 3 to personalize your feed</p>
+</div>
+<!-- Style Grid (Bento/Masonry feel using CSS Grid) -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-gutter w-full max-w-[1200px] mb-12">
+<!-- Tile 1 (Selected) -->
+<label class="relative aspect-square rounded-lg overflow-hidden cursor-pointer group">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<div class="absolute inset-0 border-[0.5px] border-border-subtle rounded-lg peer-checked:border-2 peer-checked:border-accent-soft-purple transition-all duration-200 z-10 pointer-events-none"></div>
+<img alt="Minimalist design" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A clean, minimalist architectural interior space with dramatic sunlight and sharp shadows. High-fashion, editorial photography style. Bright light mode aesthetic, crisp whites and soft neutral tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvIhgfoqTnUs1NN_ebcjgY-00o3INvlnXeN1XY7IAaQxiM5629NbhHTzwGsGdv9CMGYo8oFt3dtsJkWCSWqmHssBRtKHZZ8h2vp4P-cQbXqcHGonY-v0ouv76mmuN6s-OALjjHzAwjsWNZDyeF0qZARXee0KYBZbMNkz0HV6PiU-QWkPYMnQ2q3LPfYCGOVVuiSZwHrAj3R1nWY1tNbyLgzKVtkbUITl0oohMa7qRjAJMoJVAhG4Ihdh5aUWdvxVmEu6WXgXj05s5H"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none"></div>
+<div class="absolute bottom-4 left-4 z-20">
+<span class="font-headline-md text-headline-md text-white">Minimalist</span>
+</div>
+<div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-surface-white/20 backdrop-blur-sm border-[0.5px] border-surface-white/50 flex items-center justify-center opacity-0 peer-checked:opacity-100 peer-checked:bg-accent-soft-purple peer-checked:border-accent-soft-purple transition-all duration-200 z-20">
+<span class="material-symbols-outlined text-white text-lg">check</span>
+</div>
+</label>
+<!-- Tile 2 -->
+<label class="relative aspect-square rounded-lg overflow-hidden cursor-pointer group">
+<input class="peer sr-only" type="checkbox"/>
+<div class="absolute inset-0 border-[0.5px] border-border-subtle rounded-lg peer-checked:border-2 peer-checked:border-accent-soft-purple transition-all duration-200 z-10 pointer-events-none"></div>
+<img alt="Bauhaus graphic design" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Abstract Bauhaus inspired geometric graphic design composition. Bold primary colors on an off-white background. Clean, precise vector lines and flat color fields in an editorial layout." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ3nTqKvP6PQAhYBa5Bbs1WfepPsJ_-MK9Hu9YSDXAK-CMACjRG58hOJNqg025Qy4Nff25NE5eVIaijHDVy0MmqNW80jbhG31ffXnZ3W6gqPVdD9DLlqUVDV43bb8rko4KUzYmAXFGWEhndaXbc4IXmvj3DAPJl-z65jV_cL06LXPVOI_ZiyxSVO9oJX-aAUKuB9Rj3Yn5vXWMT__i-3RiucUKga-Bej-d3i_jKjt8krPIIyxLkjf8vPvpkPcnS2q6x4pK_3WO2_x8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none"></div>
+<div class="absolute bottom-4 left-4 z-20">
+<span class="font-headline-md text-headline-md text-white">Bauhaus</span>
+</div>
+<div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-surface-white/20 backdrop-blur-sm border-[0.5px] border-surface-white/50 flex items-center justify-center opacity-0 peer-checked:opacity-100 peer-checked:bg-accent-soft-purple peer-checked:border-accent-soft-purple transition-all duration-200 z-20">
+<span class="material-symbols-outlined text-white text-lg">check</span>
+</div>
+</label>
+<!-- Tile 3 (Selected) -->
+<label class="relative aspect-[4/5] md:aspect-square md:row-span-2 lg:row-span-1 rounded-lg overflow-hidden cursor-pointer group">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<div class="absolute inset-0 border-[0.5px] border-border-subtle rounded-lg peer-checked:border-2 peer-checked:border-accent-soft-purple transition-all duration-200 z-10 pointer-events-none"></div>
+<img alt="Abstract art" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A textured abstract painting featuring soft, ethereal brushstrokes in muted pastel tones and deep indigos. High-end gallery aesthetic, professionally lit to emphasize canvas texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnlJi8B9jBJihqT6MQPxtNRT7qFnK3_qYdOc1YPpZF7rEAgKD44FPf5T8oNne8gU-NaHsj0DTkIRTCMQnVRBrK5Snx7Lvin_zC3mmdhlHZMKlzo-1bIn_bzBdRerSBbc7Q3zLsTJsFAJvLkuyuTCIz4OAY1nSs7iMIgCb7o4PH8E-MrDWWGJMk6esCDxOy_yw_xUn9_gjGrUuRt9gSq5BFJdtdZbeIn1_529ekkqsEtD1bYLmUOXx7Jh7lkDdFuipyf7jWlh-0wpLy"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none"></div>
+<div class="absolute bottom-4 left-4 z-20">
+<span class="font-headline-md text-headline-md text-white">Abstract</span>
+</div>
+<div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-surface-white/20 backdrop-blur-sm border-[0.5px] border-surface-white/50 flex items-center justify-center opacity-0 peer-checked:opacity-100 peer-checked:bg-accent-soft-purple peer-checked:border-accent-soft-purple transition-all duration-200 z-20">
+<span class="material-symbols-outlined text-white text-lg">check</span>
+</div>
+</label>
+<!-- Tile 4 -->
+<label class="relative aspect-square rounded-lg overflow-hidden cursor-pointer group">
+<input class="peer sr-only" type="checkbox"/>
+<div class="absolute inset-0 border-[0.5px] border-border-subtle rounded-lg peer-checked:border-2 peer-checked:border-accent-soft-purple transition-all duration-200 z-10 pointer-events-none"></div>
+<img alt="Typography layout" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sophisticated editorial typography layout featuring elegant serif fonts on a stark white background. Clean, high-contrast, minimalist magazine design aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvm1iz0A9t5gOUp2OTirRagC1sgKeFQboRCC0BTrafobXpC-_YuWG6zft9eChNZdRWpfiBmQoV_J3c0HkZ3WFyk3oOkSr_fr_sC0Mb4arPTF7XmDYKgtpoaD8JzUmpAcYk30vKNVhP_F5MexWzJ4FbdOEs6kp_Boa2MsdYxMet6QrL48mPN2ci0KFxsJNUysqNmyiquhm-WNUzMIp9cPSUCcyntVMNqsHqeVz8qt1yPoNeaS5hHakEys8w48mnmgL_aS1wszT_7R9V"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none"></div>
+<div class="absolute bottom-4 left-4 z-20">
+<span class="font-headline-md text-headline-md text-white">Typography</span>
+</div>
+<div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-surface-white/20 backdrop-blur-sm border-[0.5px] border-surface-white/50 flex items-center justify-center opacity-0 peer-checked:opacity-100 peer-checked:bg-accent-soft-purple peer-checked:border-accent-soft-purple transition-all duration-200 z-20">
+<span class="material-symbols-outlined text-white text-lg">check</span>
+</div>
+</label>
+<!-- Tile 5 -->
+<label class="relative aspect-square rounded-lg overflow-hidden cursor-pointer group">
+<input class="peer sr-only" type="checkbox"/>
+<div class="absolute inset-0 border-[0.5px] border-border-subtle rounded-lg peer-checked:border-2 peer-checked:border-accent-soft-purple transition-all duration-200 z-10 pointer-events-none"></div>
+<img alt="Brutalist architecture" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Stark brutalist concrete architecture set against a clear blue sky. Harsh angles and raw textures. Minimalist, high-end architectural photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdukX11hJBgwMSiOB1wZwUdKTYM15PsKQL9dJUtoOD0e9SUi_KupCo1zhPrMQ-DES0vAEEIrrd-Xhmz_0JTLApuiinceD7xM7NKT3F5H61uHFkKY1Lq5NftwO2WTMoMen_5luY8xTaszLGuGexEFFn7MeqaG7yBoicWNzFUQyjk6nh_E-oEffbmoKKYEoqtHdxEtOzRBs-_oFm3niXy1u8WzgXBxjpkua-8KluuR853P0pL9OV6HYG48mn_Qae3eUE_A-nXYGhyXnV"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none"></div>
+<div class="absolute bottom-4 left-4 z-20">
+<span class="font-headline-md text-headline-md text-white">Brutalism</span>
+</div>
+<div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-surface-white/20 backdrop-blur-sm border-[0.5px] border-surface-white/50 flex items-center justify-center opacity-0 peer-checked:opacity-100 peer-checked:bg-accent-soft-purple peer-checked:border-accent-soft-purple transition-all duration-200 z-20">
+<span class="material-symbols-outlined text-white text-lg">check</span>
+</div>
+</label>
+</div>
+</main>
+<!-- Bottom Actions Sticky Footer -->
+<div class="fixed bottom-0 left-0 w-full bg-surface-white/90 backdrop-blur-md border-t-[0.5px] border-border-subtle p-6 flex flex-col items-center justify-center gap-4 z-50">
+<button class="w-full max-w-[400px] h-[48px] rounded-full bg-accent-soft-purple text-white font-label-caps text-label-caps uppercase tracking-widest hover:opacity-90 transition-opacity">
+            Continue
+        </button>
+<button class="font-caption text-caption text-secondary hover:text-on-surface transition-colors">
+            Skip for now
+        </button>
+</div>
+</body></html>

@@ -1,0 +1,193 @@
+# ── Visual Design Journey — Apache Configuration ─────────────────────────
+
+Options -Indexes
+DirectoryIndex index.php
+
+# ── PHP settings ──────────────────────────────────────────────────────────
+<IfModule mod_php.c>
+  php_value upload_max_filesize 10M
+  php_value post_max_size 12M
+  php_value memory_limit 128M
+  php_value max_execution_time 30
+</IfModule>
+
+# ── Security: block direct access to sensitive files ─────────────────────
+<FilesMatch "^(\.env|composer\.(json|lock)|package\.json|schema\.sql|blog-schema\.sql|seed\.sql|blog-import\.py|db\.local\.php|adsense\.local\.php|deploy\.log|\.deploy_token|\.installed)$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Force HTTPS (uncomment if your host has SSL)
+  # RewriteCond %{HTTPS} off
+  # RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Block access to config/ and includes/ directories
+  RewriteRule ^(config|includes)/ - [F,L]
+
+  # Always let the admin directory resolve before public/blog catch-all routes.
+  RewriteRule ^admin/?$ /admin/index.php [QSA,L]
+  RewriteRule ^admin/.+ - [L]
+
+  # Block access to install.php once installed (lock file exists)
+  RewriteCond %{REQUEST_FILENAME} install\.php$
+  RewriteCond %{DOCUMENT_ROOT}/config/.installed -f
+  RewriteRule ^ /index.php [L,R=302]
+
+  # ── Multilingual clean URLs: English is root, Turkish and German use prefixes
+  RewriteRule ^(tr|de)/?$                  /index.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/explore/?$          /index.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/curators/?$         /curators.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/trends/?$           /trends.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/vibe/?$             /vibe.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/archive/?$          /archive.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/archive/([a-z0-9-]+)/?$ /archive.php?lang=$1&style=$2 [QSA,L]
+  RewriteRule ^(tr|de)/blog/?$             /blog.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/blog/([a-zA-Z0-9_-]+)/?$ /blog-post.php?lang=$1&slug=$2 [QSA,L]
+  RewriteRule ^(tr|de)/category/([a-zA-Z0-9_-]+)/?$ /blog.php?lang=$1&cat=$2 [QSA,L]
+  RewriteRule ^(tr|de)/tag/([a-zA-Z0-9_-]+)/?$ /blog.php?lang=$1&tag=$2 [QSA,L]
+  RewriteRule ^(tr|de)/glossary/?$         /glossary.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/colors/?$           /colors.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/partner/?$          /$1/sponsor [R=301,L]
+  RewriteRule ^(tr|de)/sponsor/?$          /sponsor.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/premium/?$          /premium.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/submit-source/?$    /submit-source.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/create/?$           /create.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/search/?$           /search.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/settings/?$         /settings.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/saved/?$            /saved.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/notifications/?$    /notifications.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/contact/?$          /contact.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/privacy/?$          /privacy.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/terms/?$            /terms.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/about/?$            /about.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/editorial-policy/?$ /editorial-policy.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/tools/?$            /tools.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/gradient-builder/?$ /gradient-builder.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/shadow-builder/?$ /shadow-builder.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/contrast-checker/?$ /contrast-checker.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/palette-harmony/?$ /palette-harmony.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/(tint-shade|border-radius-builder|spacing-visualizer|og-image-generator|favicon-generator|readme-badges|keyframe-builder|responsive-preview|tailwind-theme|color-extractor|dark-mode-converter|font-preview|design-audit|ab-hypothesis|component-props|tailwind-cheatsheet)/?$ /v2-library.php?lang=$1&section=interactive&slug=$2 [QSA,L]
+  RewriteRule ^(tr|de)/(font-pairings|color-palettes|design-prompts|website-sections|brief-generator)/?$ /v2-library.php?lang=$1&section=$2 [QSA,L]
+  RewriteRule ^(tr|de)/(font-pairings|color-palettes|design-prompts|website-sections|brief-generator)/([a-zA-Z0-9_-]+)/?$ /v2-library.php?lang=$1&section=$2&slug=$3 [QSA,L]
+  RewriteRule ^(tr|de)/(contact|privacy|terms|about|editorial-policy|premium|sponsor|colors|glossary)\.php$ /$2.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/login/?$            /login.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/register/?$         /register.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/logout/?$           /logout.php?lang=$1 [QSA,L]
+  RewriteRule ^(tr|de)/board/([0-9]+)(-[a-zA-Z0-9_-]+)?/?$   /board.php?lang=$1&id=$2 [QSA,L]
+  RewriteRule ^(tr|de)/profile/([a-zA-Z0-9_]+)/?$ /profile.php?lang=$1&u=$2 [QSA,L]
+  RewriteRule ^(tr|de)/followers/([a-zA-Z0-9_]+)/?$ /followers.php?lang=$1&u=$2 [QSA,L]
+  RewriteRule ^(tr|de)/feed\.xml$          /feed.php?lang=$1 [L]
+  RewriteRule ^(tr|de)/boards-feed\.xml$   /feed.php?lang=$1&type=boards [L]
+
+  # ── Clean URLs: top-level pages ─────────────────────────────────────────
+  RewriteRule ^explore/?$       /index.php        [QSA,L]
+  RewriteRule ^curators/?$      /curators.php     [QSA,L]
+  RewriteRule ^trends/?$        /trends.php       [QSA,L]
+  RewriteRule ^vibe/?$          /vibe.php         [QSA,L]
+  RewriteRule ^archive/?$                  /archive.php          [QSA,L]
+  RewriteRule ^archive/([a-z0-9-]+)/?$   /archive.php?style=$1 [QSA,L]
+  RewriteRule ^glossary/?$      /glossary.php     [QSA,L]
+  RewriteRule ^colors/?$        /colors.php       [QSA,L]
+  RewriteRule ^partner/?$       /sponsor          [R=301,L]
+  RewriteRule ^sponsor/?$       /sponsor.php      [QSA,L]
+  RewriteRule ^premium/?$       /premium.php      [QSA,L]
+  RewriteRule ^submit-source/?$ /submit-source.php [QSA,L]
+  RewriteRule ^create/?$        /create.php       [QSA,L]
+  RewriteRule ^search/?$        /search.php       [QSA,L]
+  RewriteRule ^settings/?$      /settings.php     [QSA,L]
+  RewriteRule ^notifications/?$ /notifications.php [QSA,L]
+  RewriteRule ^contact/?$       /contact.php      [QSA,L]
+  RewriteRule ^privacy/?$       /privacy.php      [QSA,L]
+  RewriteRule ^terms/?$         /terms.php        [QSA,L]
+  RewriteRule ^about/?$         /about.php        [QSA,L]
+  RewriteRule ^editorial-policy/?$ /editorial-policy.php [QSA,L]
+  RewriteRule ^tools/?$         /tools.php        [QSA,L]
+  RewriteRule ^gradient-builder/?$ /gradient-builder.php [QSA,L]
+  RewriteRule ^shadow-builder/?$ /shadow-builder.php [QSA,L]
+  RewriteRule ^contrast-checker/?$ /contrast-checker.php [QSA,L]
+  RewriteRule ^palette-harmony/?$ /palette-harmony.php [QSA,L]
+  RewriteRule ^(tint-shade|border-radius-builder|spacing-visualizer|og-image-generator|favicon-generator|readme-badges|keyframe-builder|responsive-preview|tailwind-theme|color-extractor|dark-mode-converter|font-preview|design-audit|ab-hypothesis|component-props|tailwind-cheatsheet)/?$ /v2-library.php?section=interactive&slug=$1 [QSA,L]
+  RewriteRule ^(font-pairings|color-palettes|design-prompts|website-sections|brief-generator)/?$ /v2-library.php?section=$1 [QSA,L]
+  RewriteRule ^(font-pairings|color-palettes|design-prompts|website-sections|brief-generator)/([a-zA-Z0-9_-]+)/?$ /v2-library.php?section=$1&slug=$2 [QSA,L]
+  RewriteRule ^(gradients|shadows|glassmorphism|motion-presets|easing-reference|clip-paths|svg-patterns|noise-textures|micro-interactions|css-variables|tailwind-snippets|container-queries|css-resets|print-styles)/?$ /v2-library.php?section=$1 [QSA,L]
+  RewriteRule ^(buttons|form-fields|card-styles|navigation-patterns|hero-templates|cta-library|footer-templates|pricing-tables|testimonial-blocks|feature-sections|empty-states|loading-states|error-pages|toast-gallery|modal-gallery|sidebar-layouts|dashboard-layouts|mobile-patterns|dark-ui|email-templates|og-templates|icon-styles|illustration-styles|photography-guide)/?$ /v2-library.php?section=$1 [QSA,L]
+  RewriteRule ^(type-scales|line-heights|letter-spacing|font-clamps|border-radius|spacing-scale|z-index|breakpoints|aspect-ratios|viewport-units|css-grid|flexbox)/?$ /v2-library.php?section=$1 [QSA,L]
+  RewriteRule ^(color-roles|mesh-gradients|background-patterns|accessible-colors|brand-archetypes|color-stories)/?$ /v2-library.php?section=$1 [QSA,L]
+  RewriteRule ^login/?$         /login.php        [QSA,L]
+  RewriteRule ^register/?$      /register.php     [QSA,L]
+  RewriteRule ^logout/?$        /logout.php       [QSA,L]
+
+  # ── Pretty URLs: dynamic pages ───────────────────────────────────────────
+  RewriteRule ^board/([0-9]+)(-[a-zA-Z0-9_-]+)?/?$ /board.php?id=$1 [QSA,L]
+  RewriteRule ^profile/([a-zA-Z0-9_]+)/?$  /profile.php?u=$1    [QSA,L]
+  RewriteRule ^followers/([a-zA-Z0-9_]+)/?$ /followers.php?u=$1 [QSA,L]
+  RewriteRule ^blog/category/([a-zA-Z0-9_-]+)/?$ /category/$1/ [R=301,QSA,L]
+  RewriteRule ^blog/tag/([a-zA-Z0-9_-]+)/?$      /tag/$1/      [R=301,QSA,L]
+  RewriteRule ^blog/([a-zA-Z0-9_-]+)/?$          /blog-post.php?slug=$1 [QSA,L]
+  RewriteRule ^blog/?$                           /blog.php     [QSA,L]
+  RewriteRule ^category/.*/([a-zA-Z0-9_-]+)/?$   /blog.php?cat=$1 [QSA,L]
+  RewriteRule ^category/([a-zA-Z0-9_-]+)/?$      /blog.php?cat=$1 [QSA,L]
+  RewriteRule ^tag/([a-zA-Z0-9_-]+)/?$           /blog.php?tag=$1 [QSA,L]
+
+  # Sitemap
+  RewriteRule ^sitemap\.xml$       /sitemap.xml.php       [L]
+  RewriteRule ^sitemap-posts\.xml$ /sitemap.xml.php?type=posts [L]
+  RewriteRule ^sitemap-pages\.xml$ /sitemap.xml.php?type=pages [L]
+  RewriteRule ^sitemap-boards\.xml$ /sitemap.xml.php?type=boards [L]
+  RewriteRule ^feed\.xml$          /feed.php              [L]
+  RewriteRule ^boards-feed\.xml$   /feed.php?type=boards  [L]
+
+  RewriteRule ^unsubscribe/?$       /unsubscribe.php       [QSA,L]
+  RewriteRule ^newsletter-prefs/?$ /newsletter-prefs.php [QSA,L]
+
+  # Legacy WordPress media fallback: serve existing files, generate light SVG placeholders for missing ones.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^wp-content/uploads/(.+)$ /api/media.php?path=$1 [QSA,L]
+
+  # Serve existing files/directories normally
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # WordPress-compatible imported post URLs. Keep this after all real pages/routes.
+  RewriteRule ^(tr|de)/([a-zA-Z0-9_-]+)/?$ /blog-post.php?lang=$1&slug=$2 [QSA,L]
+  RewriteRule ^([a-zA-Z0-9_-]+)/?$ /blog-post.php?slug=$1 [QSA,L]
+
+  # Custom 404
+  ErrorDocument 404 /404.php
+</IfModule>
+
+# ── Block PHP execution inside uploads/ ───────────────────────────────────
+<IfModule mod_rewrite.c>
+  RewriteRule ^uploads/.*\.(php|phtml|php3|php4|php5|pl|py|jsp|asp|sh|cgi)$ - [F,NC,L]
+</IfModule>
+
+# ── Cache static assets ───────────────────────────────────────────────────
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg  "access plus 1 year"
+  ExpiresByType image/png   "access plus 1 year"
+  ExpiresByType image/gif   "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/webp  "access plus 1 year"
+  ExpiresByType image/avif  "access plus 1 year"
+  ExpiresByType font/woff2  "access plus 1 year"
+  ExpiresByType text/css    "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(?:jpg|jpeg|png|gif|svg|webp|avif|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(?:css|js)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+</IfModule>
+
+# ── Gzip compression ──────────────────────────────────────────────────────
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>

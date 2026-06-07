@@ -1,0 +1,57 @@
+# ── Visual Design Journey — .gitignore ───────────────────────────────────
+# Bu dosyalar GIT'e eklenmez — sunucuda kalır, upload edilmez
+
+# Environment / local runtime
+.env
+.env.*
+!.env.example
+.phpunit.result.cache
+.claude/
+cache/
+
+# Production credentials (installer tarafından oluşturulur)
+**/config/db.php
+**/config/db.local.php
+**/config/adsense.local.php
+**/config/.installed
+**/config/.deploy_token
+**/config/deploy.log
+
+# Dependencies
+vendor/
+node_modules/
+
+# Laravel runtime
+bootstrap/cache/*.php
+storage/*.key
+storage/app/*
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/testing/*
+storage/framework/views/*
+storage/logs/*
+!storage/**/.gitignore
+database/*.sqlite
+database/*.sqlite-*
+
+# Local/generated deploy archives and backups
+*.zip
+backup-before-laravel-v2/
+vdj-deploy-v20-full-i18n-content-slugs-20260606/
+screens 2/
+* 2.*
+* 2
+
+# Kullanıcı yüklemeleri
+uploads/boards/
+uploads/avatars/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo

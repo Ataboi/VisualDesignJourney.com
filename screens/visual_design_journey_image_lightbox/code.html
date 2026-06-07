@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Visual Design Journey - Image Lightbox</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#41379b",
+                    "secondary-container": "#e1e3e4",
+                    "surface-variant": "#dae2fd",
+                    "on-background": "#131b2e",
+                    "text-muted": "#454F5E",
+                    "on-secondary-container": "#626566",
+                    "accent-soft-purple": "#7F77DD",
+                    "outline-variant": "#c8c4d4",
+                    "inverse-on-surface": "#eef0ff",
+                    "on-error": "#ffffff",
+                    "surface-container-low": "#f2f3ff",
+                    "on-tertiary-fixed-variant": "#5a4300",
+                    "error": "#ba1a1a",
+                    "border-subtle": "#E9ECEF",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#131b2e",
+                    "surface-tint": "#5951b4",
+                    "outline": "#787583",
+                    "inverse-primary": "#c5c0ff",
+                    "surface-container-lowest": "#ffffff",
+                    "primary": "#574eb1",
+                    "on-primary-fixed": "#140067",
+                    "on-tertiary-fixed": "#251a00",
+                    "surface-dim": "#d2d9f4",
+                    "background": "#faf8ff",
+                    "primary-fixed": "#e4dfff",
+                    "on-secondary-fixed-variant": "#454748",
+                    "on-tertiary-container": "#fffbff",
+                    "inverse-surface": "#283044",
+                    "primary-fixed-dim": "#c5c0ff",
+                    "tertiary-fixed-dim": "#efc04c",
+                    "secondary-fixed": "#e1e3e4",
+                    "secondary": "#5c5f60",
+                    "surface-container": "#eaedff",
+                    "on-error-container": "#93000a",
+                    "surface": "#faf8ff",
+                    "on-secondary": "#ffffff",
+                    "surface-bright": "#faf8ff",
+                    "surface-container-highest": "#dae2fd",
+                    "surface-white": "#FFFFFF",
+                    "surface-container-high": "#e2e7ff",
+                    "secondary-fixed-dim": "#c5c7c8",
+                    "on-secondary-fixed": "#191c1d",
+                    "on-surface-variant": "#474552",
+                    "tertiary-container": "#926f00",
+                    "primary-container": "#7067cc",
+                    "tertiary": "#745800",
+                    "tertiary-fixed": "#ffdf98",
+                    "on-primary-container": "#fffbff",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "80px",
+                    "container-max": "1440px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "margin-tablet": "32px",
+                    "margin-desktop": "48px"
+            },
+            "fontFamily": {
+                    "headline-xl-mobile": [
+                            "Manrope"
+                    ],
+                    "label-caps": [
+                            "Inter"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "display-lg": [
+                            "Manrope"
+                    ],
+                    "caption": [
+                            "Inter"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "headline-md": [
+                            "Manrope"
+                    ],
+                    "headline-xl": [
+                            "Manrope"
+                    ]
+            },
+            "fontSize": {
+                    "headline-xl-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "1",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg": [
+                            "64px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "caption": [
+                            "13px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-xl": [
+                            "40px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+        },
+        },
+      }
+    </script>
+<style>
+        /* Hide scrollbar for thumbnail strip */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-on-background w-full h-screen overflow-hidden text-surface-white font-body-md text-body-md antialiased selection:bg-accent-soft-purple selection:text-surface-white">
+<div class="fixed inset-0 z-50 flex flex-col justify-between">
+<!-- Top Navigation Area (Close Button) -->
+<div class="flex justify-end items-start w-full px-margin-mobile md:px-margin-desktop py-margin-mobile md:py-margin-tablet absolute top-0 right-0 z-10">
+<button aria-label="Close Lightbox" class="h-12 w-12 rounded-full border border-surface-white/20 bg-on-background/50 backdrop-blur-md flex items-center justify-center text-surface-white hover:bg-surface-white/10 hover:border-surface-white/40 transition-all duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300;">close</span>
+</button>
+</div>
+<!-- Center Image Canvas -->
+<div class="flex-1 flex items-center justify-center relative w-full h-full px-margin-mobile md:px-margin-desktop py-20">
+<!-- Left Arrow -->
+<button aria-label="Previous Image" class="absolute left-margin-mobile md:left-margin-desktop h-12 w-12 md:h-16 md:w-16 rounded-full border border-surface-white/20 bg-on-background/50 backdrop-blur-md flex items-center justify-center text-surface-white hover:bg-surface-white/10 hover:border-surface-white/40 transition-all duration-200 z-10">
+<span class="material-symbols-outlined text-2xl md:text-3xl" style="font-variation-settings: 'wght' 300;">chevron_left</span>
+</button>
+<!-- Main Featured Image -->
+<div class="w-full h-full max-h-[768px] flex items-center justify-center">
+<img alt="Main Lightbox Image" class="max-h-full max-w-full object-contain rounded-lg border border-surface-white/10 shadow-2xl" data-alt="A striking digital installation art piece featuring glowing, generative geometric shapes suspended in a vast, minimalist gallery space. The room is illuminated by high-key, soft white lighting that creates a bright, modern light-mode aesthetic. The artwork relies on a sophisticated palette of deep blacks and pristine whites, punctuated by intense accents of vibrant red. The mood is serene yet technologically advanced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAurJ8YNAw0S5I826f1d3nPwXsbSaYuvqSHunElDB6hJa90UiOq2Qk_dGy-6nF05oBvChBmaxrsx3L01mbWwiurTH9qFeOXaBictQ-CffdIm5yB5DG6cRvRN7n_1XjN0mvSWUBMqBT6_BKzkhsaUnINuJX1FFF5pCZELAGccJ1mGdP03z8s4LyeJw-K4yWDHx9TUKqKtu0RxckgkETCYMryuLEMZGBpTU_WuWeQ3rBOUGSpy27B55OdQllf5h2478AJU0ipDmaovBhA"/>
+</div>
+<!-- Right Arrow -->
+<button aria-label="Next Image" class="absolute right-margin-mobile md:right-margin-desktop h-12 w-12 md:h-16 md:w-16 rounded-full border border-surface-white/20 bg-on-background/50 backdrop-blur-md flex items-center justify-center text-surface-white hover:bg-surface-white/10 hover:border-surface-white/40 transition-all duration-200 z-10">
+<span class="material-symbols-outlined text-2xl md:text-3xl" style="font-variation-settings: 'wght' 300;">chevron_right</span>
+</button>
+</div>
+<!-- Bottom Thumbnail Bar and Metadata -->
+<div class="w-full bg-inverse-surface/80 backdrop-blur-lg border-t border-surface-white/10 pb-margin-mobile md:pb-margin-tablet pt-6 px-margin-mobile md:px-margin-desktop flex flex-col items-center z-10">
+<!-- Thumbnail Strip -->
+<div class="w-full max-w-3xl flex gap-3 overflow-x-auto scrollbar-hide snap-x px-4 pb-2 items-center justify-center md:justify-start">
+<button class="flex-shrink-0 snap-center transition-transform hover:scale-105 duration-200">
+<img alt="Thumbnail 1" class="h-16 w-16 md:h-20 md:w-20 object-cover rounded-md border-2 border-transparent opacity-60 hover:opacity-100 transition-opacity" data-alt="A minimalist architectural interior featuring smooth concrete walls and abstract geometric shadows cast by strong directional sunlight. A solitary designer chair sits in the corner, anchoring the pristine space. The composition is highly balanced, emphasizing clean lines and high-contrast lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJe_tG73dkoEreJFn2uXn70W7Fy1fz5qjwOnRHJW74QvmXXd0ftwhiFfxgH_uNHI9xtiVPzZYo_A4CgpeqepgoETwv6Bh34w20B_xhnuo6AyhuDtpyxrpPG6qRfO5_xD0EyhR0OtRMBvKnPxXxnEIHDIOOmf5Q8oqqEHj3cwJ3cAfrujMCQRGKhzaGw-5urnHK_puxJGjF-jw7FvWKogbpN6n5I7UugTH-GjchRiN0trBJabk8fKzOXipBrzJvv_dKUEaXMl4VAnTD"/>
+</button>
+<!-- Active Thumbnail -->
+<button class="flex-shrink-0 snap-center scale-105 transition-transform duration-200">
+<img alt="Active Thumbnail" class="h-16 w-16 md:h-20 md:w-20 object-cover rounded-md border-2 border-accent-soft-purple opacity-100" data-alt="A striking digital installation art piece featuring glowing, generative geometric shapes suspended in a vast, minimalist gallery space. The room is illuminated by high-key, soft white lighting that creates a bright, modern light-mode aesthetic. The artwork relies on a sophisticated palette of deep blacks and pristine whites, punctuated by intense accents of vibrant red. The mood is serene yet technologically advanced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFSWPvio5B75haqVAeLTYv2LER5C7hSzLHrzcDCl3yM5dUmbn5dvWm4AcBxz6v2jt96Jn8GGLGV1VZuTcIzy2xPV7biipz90jJEa4n1sRXLt4HDwCoiPwk1E0Pk0Zfi677SiRnTW8kaKXIl_zzNoA2Er98NdD24UFGbqVa0ZoWdPV3cYmqSR5an1Yp_33ox2JVhajewRB68uk5TW6NRFnT72XyjNHjntg8LxyezT9f4q17-YrjdRCCdHchnh80RshVt0tVaJDK1DiH"/>
+</button>
+<button class="flex-shrink-0 snap-center transition-transform hover:scale-105 duration-200">
+<img alt="Thumbnail 3" class="h-16 w-16 md:h-20 md:w-20 object-cover rounded-md border-2 border-transparent opacity-60 hover:opacity-100 transition-opacity" data-alt="A contemporary editorial fashion layout showcasing overlapping torn paper textures and soft pastel color blocks. Elegant serif typography floats delicately over blurred cinematic photography. The overarching vibe is sophisticated, quiet, and deeply evocative of modern art galleries." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIFeK6vgwQz0480f04_rZHGtqV0Ubwg_XM4jTenMZ_YK8grT_NF6MB-9Ejr0h9cw7KexteJ9aL20lbKT9SFao-WIqqcTB8mphBcuzxrWuNTuNhJXN2YC3Ymx-StW28PDP1VrBZCfpEmcGGExwlf7HwhmkiARqSPiVlxwnvDIuNQiX0jeJmqhM_aAEw-nZSzcW3H8SOUQh0PRdu-92dJ9woMeNtLA1ugH8S0dEXuIS_IcuRywP689K3hLZ5qU1W7oaH7z-mwDBeFv_j"/>
+</button>
+<button class="flex-shrink-0 snap-center transition-transform hover:scale-105 duration-200">
+<img alt="Thumbnail 4" class="h-16 w-16 md:h-20 md:w-20 object-cover rounded-md border-2 border-transparent opacity-60 hover:opacity-100 transition-opacity" data-alt="An abstract arrangement of smooth ceramic vases on a pristine white marble surface. Diffused natural light illuminates the scene, highlighting the subtle matte textures and organic curves. The color palette is restricted to pure whites, soft creams, and muted clay tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDjpE8i57fwSh2DeCwTZ8yvdz39aTULmYZNDUHAKmFxBd_L8djj9LJVZTbmz0r_TYjx_eqQDvS8pnyfy312UGOLAovTlqLvBA37TpfVh3vDTt9VLqiq1ePJwbnGfgtfMrtJfSuN7HpJqip8p_31RLEvktRoc0ZaJW8W36wFqkZjsAIlpP_ibfJnfHtdndxyb9-0cHeXYo4QjX5_LOMoonZ7CFGQ8IgxO6eVLBi2XUI2HPI_jn5FMKu9ImWzwVaztOVmJlV8-J5zMi0"/>
+</button>
+</div>
+<!-- Metadata & Action -->
+<div class="mt-6 flex flex-col items-center text-center space-y-3">
+<h2 class="font-headline-md text-headline-md text-surface-white tracking-tight">Abstract Geometric Installation</h2>
+<a class="inline-flex items-center gap-2 font-label-caps text-label-caps text-inverse-primary hover:text-accent-soft-purple transition-colors group px-4 py-2 rounded-full border border-transparent hover:border-accent-soft-purple/30" href="board.php">
+<span class="material-symbols-outlined text-[16px] group-hover:-translate-x-1 transition-transform" style="font-variation-settings: 'wght' 400;">arrow_back</span>
+                    Return to Minimalist Forms Board
+                </a>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Profile - Visual Design Journey</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#c5c0ff",
+                        "on-primary-fixed-variant": "#41379b",
+                        "surface-dim": "#d2d9f4",
+                        "accent-soft-purple": "#7F77DD",
+                        "tertiary": "#745800",
+                        "secondary-container": "#e1e3e4",
+                        "on-tertiary-fixed": "#251a00",
+                        "inverse-on-surface": "#eef0ff",
+                        "tertiary-container": "#926f00",
+                        "surface-variant": "#dae2fd",
+                        "secondary-fixed": "#e1e3e4",
+                        "surface-container-highest": "#dae2fd",
+                        "secondary": "#5c5f60",
+                        "secondary-fixed-dim": "#c5c7c8",
+                        "tertiary-fixed": "#ffdf98",
+                        "outline-variant": "#c8c4d4",
+                        "outline": "#787583",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "background": "#faf8ff",
+                        "on-secondary-fixed-variant": "#454748",
+                        "on-primary-container": "#fffbff",
+                        "primary-fixed-dim": "#c5c0ff",
+                        "on-tertiary-fixed-variant": "#5a4300",
+                        "surface": "#faf8ff",
+                        "on-tertiary-container": "#fffbff",
+                        "on-secondary-container": "#626566",
+                        "on-primary-fixed": "#140067",
+                        "primary-fixed": "#e4dfff",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#474552",
+                        "surface-white": "#FFFFFF",
+                        "surface-container": "#eaedff",
+                        "on-secondary-fixed": "#191c1d",
+                        "on-surface": "#131b2e",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "border-subtle": "#E9ECEF",
+                        "surface-container-low": "#f2f3ff",
+                        "primary": "#574eb1",
+                        "surface-tint": "#5951b4",
+                        "inverse-surface": "#283044",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#efc04c",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e2e7ff",
+                        "primary-container": "#7067cc",
+                        "surface-bright": "#faf8ff",
+                        "text-muted": "#454F5E",
+                        "on-background": "#131b2e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "48px",
+                        "section-gap": "80px",
+                        "margin-tablet": "32px",
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "headline-xl": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "headline-xl-mobile": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "caption": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-xl": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-xl-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "caption": ["13px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased pt-20">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop h-20 bg-surface-white/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-border-subtle dark:border-outline-variant transition-opacity duration-200">
+<div class="flex items-center space-x-8">
+<span class="font-headline-md text-headline-md font-semibold text-on-surface dark:text-inverse-on-surface">Visual Design Journey</span>
+<div class="hidden md:flex space-x-6">
+<!-- Navigation is not explicitly detailed in prompt but JSON had Explore, Curators, Trends. Suppressing highlight as we are on profile -->
+<a class="font-label-caps text-label-caps text-on-surface dark:text-inverse-on-surface hover:opacity-80 transition-opacity duration-200" href="#">Explore</a>
+<a class="font-label-caps text-label-caps text-on-surface dark:text-inverse-on-surface hover:opacity-80 transition-opacity duration-200" href="#">Curators</a>
+<a class="font-label-caps text-label-caps text-on-surface dark:text-inverse-on-surface hover:opacity-80 transition-opacity duration-200" href="#">Trends</a>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<div class="hidden md:block relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted">search</span>
+<input class="pl-10 pr-4 py-2 rounded-md border border-border-subtle bg-transparent focus:border-accent-soft-purple focus:ring-0 font-body-md text-body-md w-48" placeholder="Search..." type="text"/>
+</div>
+<button class="font-label-caps text-label-caps text-primary dark:text-inverse-primary hover:opacity-80 transition-opacity duration-200">Sign in</button>
+<button class="bg-accent-soft-purple text-surface-white rounded-full px-6 py-2 font-label-caps text-label-caps hover:opacity-80 transition-opacity duration-200">Create Board</button>
+</div>
+</nav>
+<main class="w-full">
+<!-- Header Section -->
+<section class="relative">
+<!-- Cover Photo -->
+<div class="w-full h-[200px] bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A sweeping, abstract digital landscape featuring flowing lines and gradients in a soft pastel color palette, primarily focusing on muted lilacs and subtle cream tones. The minimalist editorial style highlights negative space and gentle curves, creating a serene, high-end gallery aesthetic. Lighting is even and soft, emphasizing the smooth textures and elegant composition without harsh shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZKRCSec5CTiwwiQNpAY8n56yeO8LUwQ5kKSw3iIN8-vmb0Y6dKh88uUMbmnXqz3LrJmC9pI7khn9p9TdXw_fqMA-QzbxU0lLS06HoNmP2H7AtRfSWSyfXuyOfU_VqWROhNt2pdskZnKeH7bDT0JxiYJ_onVNSl75lAyFhwEzSqMkUm7TEwPtoRa0C4QJRqXmrBH8kZXD2UgOmEUsyu2jlzJjcFaPss9a9OxKqybudWiLxlC6NmpQEAFIZU5hu4ovqxJk-UjOoeAvi"/>
+</div>
+<!-- Profile Info Container -->
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop relative pb-section-gap">
+<!-- Avatar (Overlapping) -->
+<div class="absolute -top-10 left-margin-mobile md:left-margin-desktop">
+<img class="w-20 h-20 rounded-full border-4 border-surface-white object-cover" data-alt="A professional, minimalist portrait of a confident creative individual against a clean, neutral white background. The subject is well-lit with soft, natural lighting that emphasizes clear features and a sophisticated demeanor. The image follows a high-fashion, editorial aesthetic, avoiding busy backgrounds to maintain a focus on the subject's calm and intentional expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl2oPbInawnH0vguunorZhplamNtSyDRG-ctLZzjPcjON2Opayn0MvXngvESeO0_-eQvT_1I7eYfLsX5qQzwSp-NrafSNMaKwc87yEFcLZMZDP7jBDV4sluTq_sUKzbX5Ph74rV1WlONEMyXiSxBWvs3ewzEL0C1l5FWSCk1hqv5nSaHktOdg859KYcS6lB5Vs0djtbkwpahTqlN09EcLpAGHyJ0OTUjnHwzZFyk9GnPg8p1tZ627-FDH0F9zVEf_ruGNr2vX8Nfht"/>
+</div>
+<!-- Actions (Top Right of Profile Info) -->
+<div class="flex justify-end pt-4 mb-8">
+<button class="bg-transparent border border-border-subtle text-on-surface rounded-full px-6 py-2 font-label-caps text-label-caps hover:bg-surface-container-low transition-colors">Edit Profile</button>
+</div>
+<!-- Bio & Stats -->
+<div class="mt-4 max-w-2xl">
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-2">Elena Rostova</h1>
+<p class="font-body-lg text-body-lg text-text-muted mb-6">Digital curator and spatial designer. Exploring the intersection of minimalist architecture and serene virtual environments. Based in Copenhagen.</p>
+<div class="flex space-x-6">
+<div class="flex items-baseline space-x-1">
+<span class="font-headline-md text-headline-md">12.4k</span>
+<span class="font-label-caps text-label-caps text-text-muted">Followers</span>
+</div>
+<div class="flex items-baseline space-x-1">
+<span class="font-headline-md text-headline-md">342</span>
+<span class="font-label-caps text-label-caps text-text-muted">Following</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tab Navigation -->
+<section class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop border-b border-border-subtle mb-10">
+<div class="flex space-x-8">
+<!-- Active Tab -->
+<button class="pb-4 relative font-label-caps text-label-caps text-accent-soft-purple after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-accent-soft-purple after:rounded-full">Boards</button>
+<!-- Inactive Tabs -->
+<button class="pb-4 font-label-caps text-label-caps text-text-muted hover:text-on-surface transition-colors">Liked</button>
+<button class="pb-4 font-label-caps text-label-caps text-text-muted hover:text-on-surface transition-colors">Following</button>
+</div>
+</section>
+<!-- Boards Grid (Masonry 3-column layout) -->
+<section class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop pb-section-gap">
+<div class="columns-1 md:columns-2 lg:columns-3 gap-gutter space-y-gutter">
+<!-- Board Card 1 -->
+<article class="break-inside-avoid border border-border-subtle rounded-lg overflow-hidden group hover:border-accent-soft-purple transition-colors bg-surface-white">
+<img class="w-full object-cover aspect-[4/3]" data-alt="A curated collection of minimalist interior design elements, featuring a sleek, mid-century modern chair set against a stark white wall. The lighting is diffused, casting soft, elegant shadows that highlight the clean geometry of the furniture. The overall aesthetic is incredibly refined, aligning with a high-end editorial magazine spread, prioritizing negative space and muted neutral tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCshutExvcya-D7zS9Cw3_EVpSFO5qZGnwXky_OKSS30OqnbSHIK0exEERLbue97OFLEcT6CjEamDOjpv8wcr0aBaFWJMzBDuOntimgjlhdfneYwnL8DjZvgqkII6jt_j4pB71cJ-Tw0Ikau8XIMNey31-X1gcnLH0X_CW7Ko5fMLVnJys4APqnRqMRzTPIEKUM8TSpKAkj-F-auRgRcnGtx_45LPMQdrT4DuxbRUXKWupbvo2Swp38zCsDfB8qSi9vAwvje5IAGoHe"/>
+<div class="p-4">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Brutalist Retreats</h3>
+<p class="font-caption text-caption text-text-muted">24 items</p>
+</div>
+</article>
+<!-- Board Card 2 (Taller) -->
+<article class="break-inside-avoid border border-border-subtle rounded-lg overflow-hidden group hover:border-accent-soft-purple transition-colors bg-surface-white">
+<img class="w-full object-cover aspect-[3/4]" data-alt="An expansive, high-ceilinged modern living space showcasing minimalist architecture. Large floor-to-ceiling windows flood the room with natural light, illuminating smooth concrete floors and a single, sculptural piece of furniture. The color palette is strictly monochrome with subtle variations of gray and stark white. The composition is highly structured, emphasizing vertical lines and a profound sense of serene emptiness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2TqS7Vc7dyTtY48HOod3KKwhX59-jgaD27_HNJz_o7LREhNJjfcUnhfgv80jet2_ClUzKFwXj5aEZpHL7VjjhbRtY5VDfxgHMx3VERo9lhCCPqwVSnzaaqVqpUSGq5miNn_ZJkWCNfyNwBz5iqDZPSiB-Gbf7wCXsakEyQyxcy9bWeTWsgAbJ3uodjQSvF7p8LiuRYl2otRzyLwyfGW9NbbluddR8NnqnBWOBXPpmw2048h0PwZAmkwinuH0FmFxd_-pTHqpbktMD"/>
+<div class="p-4">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Monochrome Spaces</h3>
+<p class="font-caption text-caption text-text-muted">18 items</p>
+</div>
+</article>
+<!-- Board Card 3 -->
+<article class="break-inside-avoid border border-border-subtle rounded-lg overflow-hidden group hover:border-accent-soft-purple transition-colors bg-surface-white">
+<img class="w-full object-cover aspect-[4/5]" data-alt="A close-up, detailed shot of textured ceramic vases resting on a pristine, flat surface. The minimalist arrangement is bathed in a crisp, cool light that emphasizes the raw, matte finish of the pottery against a flawless, neutral background. The visual style is quiet, intentional, and highly curated, reminiscent of a sophisticated gallery exhibition highlighting artisanal objects." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGuX5xmISgwCrUpEwrdlbscZJ6lNLitPCuBXJqttviZGmVctnXvykPmzncwxQf4s1CQ0jxewoORvuH_dkXkZxUdoMkT6EH3uWqtCzA4_B59qAcWfsOnr-P5Vl8suRZWPjphaW3lXL4gGgsUOJYgRdDNTSy27pk_blLIOQ5e0ediU7CnEeCbPEHLRNKUg2Hggw-aOtFNDN3anyZi-ZlEmkYb2DhSrQ3iOJc_jxTyHzNZU0u1_rp5z04ZLbyLwkqwJOQN-ZyyeeQ8Yqx"/>
+<div class="p-4">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Tactile Ceramics</h3>
+<p class="font-caption text-caption text-text-muted">42 items</p>
+</div>
+</article>
+<!-- Board Card 4 -->
+<article class="break-inside-avoid border border-border-subtle rounded-lg overflow-hidden group hover:border-accent-soft-purple transition-colors bg-surface-white">
+<img class="w-full object-cover aspect-square" data-alt="An abstract composition of light and shadow interacting with a curved, white architectural form. The stark contrast between the bright, illuminated surfaces and the deep, geometric shadows creates a compelling visual narrative. The image embodies a minimalist editorial approach, utilizing negative space and a pure, unblemished aesthetic to evoke a sense of calm focus and design purity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5wVl2kAf-lbATDReSqRjpPBYMyXLaCZ0PTCqlm9Ejakcts5loPeFr3ICHqoU_2tkOwmbZQ4Ldp4IifuAHj6Nbi-M2q3hNZZb54azaa1NaxkQH7hc669ERQ8t0byYFT1ljc5f81IxOVn-ArB7c3YUjvxirmx1GqtCgRSv4tLsYAOxbM5THzK1WU1992mQuJKuHfH94aMDT5p5CgqB-8f0V9FYAiLTsTOu1a52a734Dn0H8b3s45KR7qp4ZRvIWlXMbfCXaWmQrh_d3"/>
+<div class="p-4">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Light Studies</h3>
+<p class="font-caption text-caption text-text-muted">12 items</p>
+</div>
+</article>
+<!-- Board Card 5 -->
+<article class="break-inside-avoid border border-border-subtle rounded-lg overflow-hidden group hover:border-accent-soft-purple transition-colors bg-surface-white">
+<img class="w-full object-cover aspect-[3/4]" data-alt="A serene outdoor patio space featuring minimalist design principles. A single, stylized chair sits on a perfectly smooth stone surface, accompanied by a solitary, sculptural plant in a simple planter. The color scheme relies on warm, earthy neutrals and crisp whites, set against a clear sky. The aesthetic is clean, sophisticated, and highly intentional, avoiding any visual clutter." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcgTpI-iwXFxdfp5bQnisbYVqZ7EU4yiS0X4NscmT-TMBfO8SfNR-0kl0v2j5id9-jZvFSdkUjDn_ib8j_WM0OgDhRwbz9YcZ1MxZWR5vdmQaZvr0Ktj9MIE2-yJop9dX06bGYUg2GoIciq82oEl75T4iuNvWzp2dD5Os1lr20XYOMAi7p2TL62aG9cA0BuvaGekU4-590StGQY-KmLmmMfd-5Gd7Adqgc9OyJHHHhHZMA1OLwSmtR5SWY-voOEC8tGLGwCKBcaas0"/>
+<div class="p-4">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Courtyards</h3>
+<p class="font-caption text-caption text-text-muted">31 items</p>
+</div>
+</article>
+<!-- Board Card 6 -->
+<article class="break-inside-avoid border border-border-subtle rounded-lg overflow-hidden group hover:border-accent-soft-purple transition-colors bg-surface-white">
+<img class="w-full object-cover aspect-[16/9]" data-alt="A minimalist workspace arrangement viewed from directly above. The composition includes a sleek laptop, a simple notebook, and a refined pen meticulously aligned on a flawless, light-colored desk surface. The arrangement is characterized by extreme precision, generous whitespace, and a complete lack of extraneous items, perfectly capturing a high-end, editorial flat-lay style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9GGEQXHMdFZQ5-nRG-irqi2d-R67JypekdpxLawy8qH4cNoY8a6NlBrIp82WJoC3lCFxyQYM-w-ivPsM1fgDQtcz14mftYzZV4GJogr9xi0hpARPd077gvE-z7zhIeNvXE95SkHz3HajOa_uum2BOTJeJZTbFdzPXztG2cB2wjTsAq5YDM_bX8CTguC5lgdzv37vT5h4TVk6pgfzUPP6Mbsl8G0Kob8w0HWl6_CE5bQdJ_XwpZvaJKfSgTH4xbR9epWzmev3_CCSM"/>
+<div class="p-4">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Desktop Aesthetics</h3>
+<p class="font-caption text-caption text-text-muted">9 items</p>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full py-section-gap px-margin-desktop flex flex-col md:flex-row justify-between items-center bg-surface dark:bg-inverse-surface border-t border-border-subtle dark:border-outline-variant">
+<div class="font-headline-md text-headline-md text-on-surface dark:text-inverse-on-surface mb-6 md:mb-0">
+            Visual Design Journey
+        </div>
+<div class="flex flex-wrap justify-center md:justify-end gap-6 mb-6 md:mb-0">
+<a class="font-label-caps text-label-caps text-text-muted dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-caps text-label-caps text-text-muted dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-caps text-label-caps text-text-muted dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Archive</a>
+<a class="font-label-caps text-label-caps text-text-muted dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Contact</a>
+</div>
+<div class="font-body-md text-body-md text-text-muted dark:text-on-surface-variant text-center md:text-right w-full md:w-auto">
+            © 2024 Visual Design Journey. All rights reserved.
+        </div>
+</footer>
+</body></html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Account Settings - Visual Design Journey</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#41379b",
+                        "secondary-container": "#e1e3e4",
+                        "surface-variant": "#dae2fd",
+                        "on-background": "#131b2e",
+                        "text-muted": "#454F5E",
+                        "on-secondary-container": "#626566",
+                        "accent-soft-purple": "#7F77DD",
+                        "outline-variant": "#c8c4d4",
+                        "inverse-on-surface": "#eef0ff",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f2f3ff",
+                        "on-tertiary-fixed-variant": "#5a4300",
+                        "error": "#ba1a1a",
+                        "border-subtle": "#E9ECEF",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#131b2e",
+                        "surface-tint": "#5951b4",
+                        "outline": "#787583",
+                        "inverse-primary": "#c5c0ff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#574eb1",
+                        "on-primary-fixed": "#140067",
+                        "on-tertiary-fixed": "#251a00",
+                        "surface-dim": "#d2d9f4",
+                        "background": "#faf8ff",
+                        "primary-fixed": "#e4dfff",
+                        "on-secondary-fixed-variant": "#454748",
+                        "on-tertiary-container": "#fffbff",
+                        "inverse-surface": "#283044",
+                        "primary-fixed-dim": "#c5c0ff",
+                        "tertiary-fixed-dim": "#efc04c",
+                        "secondary-fixed": "#e1e3e4",
+                        "secondary": "#5c5f60",
+                        "surface-container": "#eaedff",
+                        "on-error-container": "#93000a",
+                        "surface": "#faf8ff",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#faf8ff",
+                        "surface-container-highest": "#dae2fd",
+                        "surface-white": "#FFFFFF",
+                        "surface-container-high": "#e2e7ff",
+                        "secondary-fixed-dim": "#c5c7c8",
+                        "on-secondary-fixed": "#191c1d",
+                        "on-surface-variant": "#474552",
+                        "tertiary-container": "#926f00",
+                        "primary-container": "#7067cc",
+                        "tertiary": "#745800",
+                        "tertiary-fixed": "#ffdf98",
+                        "on-primary-container": "#fffbff",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "80px",
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "margin-tablet": "32px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-xl-mobile": ["Manrope"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Manrope"],
+                        "caption": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Manrope"],
+                        "headline-xl": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-xl-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "caption": ["13px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-xl": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased pt-20">
+<!-- TopNavBar -->
+<nav class="bg-surface-white/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-border-subtle dark:border-outline-variant fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop h-20">
+<div class="flex items-center gap-8">
+<a class="font-headline-md text-headline-md font-semibold text-on-surface dark:text-inverse-on-surface tracking-tight" href="#">
+                Visual Design Journey
+            </a>
+<div class="hidden md:flex items-center gap-6">
+<!-- Navigation is inactive as Settings is a distinct utility area -->
+<a class="font-label-caps text-label-caps text-on-surface dark:text-inverse-on-surface hover:opacity-80 transition-opacity duration-200" href="#">Explore</a>
+<a class="font-label-caps text-label-caps text-on-surface dark:text-inverse-on-surface hover:opacity-80 transition-opacity duration-200" href="#">Curators</a>
+<a class="font-label-caps text-label-caps text-on-surface dark:text-inverse-on-surface hover:opacity-80 transition-opacity duration-200" href="#">Trends</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<!-- Search Icon Placeholder (search_bar: on_left logic adapted for minimal layout) -->
+<button class="text-on-surface hover:opacity-80 transition-opacity duration-200">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="font-label-caps text-label-caps text-on-surface border border-border-subtle rounded-full px-6 py-2 hover:bg-border-subtle/20 transition-colors">Sign in</button>
+<button class="font-label-caps text-label-caps text-surface-white bg-accent-soft-purple rounded-full px-6 py-2 hover:opacity-80 transition-opacity">Create Board</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap grid grid-cols-1 md:grid-cols-[240px_1fr] gap-margin-desktop items-start">
+<!-- Left Sidebar Navigation -->
+<aside class="sticky top-32 hidden md:block">
+<h1 class="font-headline-md text-headline-md text-on-surface mb-8">Settings</h1>
+<nav class="flex flex-col gap-2">
+<a class="font-body-md text-body-md py-2 pl-4 border-l-2 border-accent-soft-purple text-accent-soft-purple font-medium" href="#">Profile</a>
+<a class="font-body-md text-body-md py-2 pl-4 border-l-2 border-transparent text-text-muted hover:text-on-surface transition-colors" href="#">Account</a>
+<a class="font-body-md text-body-md py-2 pl-4 border-l-2 border-transparent text-text-muted hover:text-on-surface transition-colors" href="#">Password</a>
+<a class="font-body-md text-body-md py-2 pl-4 border-l-2 border-transparent text-text-muted hover:text-on-surface transition-colors" href="#">Notifications</a>
+<a class="font-body-md text-body-md py-2 pl-4 border-l-2 border-transparent text-text-muted hover:text-on-surface transition-colors" href="#">Privacy</a>
+<a class="font-body-md text-body-md py-2 pl-4 border-l-2 border-transparent text-text-muted hover:text-on-surface transition-colors" href="#">Appearance</a>
+</nav>
+</aside>
+<!-- Right Content Area: Profile Settings -->
+<section class="max-w-2xl w-full">
+<div class="mb-10">
+<h2 class="font-headline-md text-headline-md text-on-surface">Profile</h2>
+<p class="font-body-md text-body-md text-text-muted mt-2">Update your photo and personal details to customize your presence on the platform.</p>
+</div>
+<form class="flex flex-col gap-8">
+<!-- Avatar Upload Section -->
+<div class="flex items-center gap-6">
+<div class="relative group cursor-pointer w-24 h-24 rounded-full overflow-hidden border border-border-subtle bg-surface-variant flex-shrink-0">
+<img alt="Current profile picture" class="w-full h-full object-cover" data-alt="A close-up portrait of a sophisticated individual with clean, minimalist styling, set against a neutral, well-lit background. The lighting is soft and high-key, emphasizing a modern, editorial aesthetic consistent with a premium design platform. The image exudes a calm, professional, and creative mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9MNknCZ2YkaKPlCq4frlrmD_H0U7zB26MpF4_dJJgA3VdypZkHAeRx0N47MGplgjAKwKDA1TR4BuXwFQ8bQoH1bj4WCD2-d3NfAVc3PC7DN_a0knscRLYEvSXFR7RhFKAQTgM2NooAjVUeigXoHaGhtAUg8i2oMzEnUrhQWBgQ2Wcc9GdBLoRQScWN4p2Ya5cRjfpBYzIwc7z7-uDR0jFoHneudz3z3Kv6v-noW5ZbbLWq6XqMDboWPBFottP2mo5ja69Bsp531mU"/>
+<div class="absolute inset-0 bg-on-surface/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+<span class="material-symbols-outlined text-surface-white">photo_camera</span>
+</div>
+</div>
+<div>
+<div class="font-body-md text-body-md text-on-surface font-medium mb-1">Profile Photo</div>
+<div class="font-caption text-caption text-text-muted">JPG, GIF or PNG. 1MB max.</div>
+</div>
+</div>
+<!-- Fields Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Display Name -->
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface" for="display-name">Display Name</label>
+<input class="font-body-md text-body-md text-on-surface bg-transparent border border-border-subtle rounded-md px-4 py-3 focus:outline-none focus:border-accent-soft-purple focus:ring-1 focus:ring-accent-soft-purple transition-colors w-full" id="display-name" type="text" value="Jane Doe"/>
+</div>
+<!-- Username -->
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface" for="username">Username</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 font-body-md text-body-md text-text-muted">@</span>
+<input class="font-body-md text-body-md text-on-surface bg-transparent border border-border-subtle rounded-md pl-8 pr-4 py-3 focus:outline-none focus:border-accent-soft-purple focus:ring-1 focus:ring-accent-soft-purple transition-colors w-full" id="username" type="text" value="janedoe_design"/>
+</div>
+</div>
+</div>
+<!-- Bio -->
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface" for="bio">Bio</label>
+<textarea class="font-body-md text-body-md text-on-surface bg-transparent border border-border-subtle rounded-md px-4 py-3 focus:outline-none focus:border-accent-soft-purple focus:ring-1 focus:ring-accent-soft-purple transition-colors w-full resize-none" id="bio" rows="4">Minimalist designer and visual curator based in New York. Exploring the intersection of typography and empty space.</textarea>
+<div class="font-caption text-caption text-text-muted text-right mt-1">112 / 300 characters</div>
+</div>
+<!-- Website URL -->
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface" for="website">Website URL</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-text-muted text-[20px]">link</span>
+<input class="font-body-md text-body-md text-on-surface bg-transparent border border-border-subtle rounded-md pl-10 pr-4 py-3 focus:outline-none focus:border-accent-soft-purple focus:ring-1 focus:ring-accent-soft-purple transition-colors w-full" id="website" type="url" value="https://janedoe.design"/>
+</div>
+</div>
+<!-- Location -->
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface" for="location">Location</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-text-muted text-[20px]">location_on</span>
+<input class="font-body-md text-body-md text-on-surface bg-transparent border border-border-subtle rounded-md pl-10 pr-4 py-3 focus:outline-none focus:border-accent-soft-purple focus:ring-1 focus:ring-accent-soft-purple transition-colors w-full" id="location" type="text" value="New York, USA"/>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex justify-end mt-4 pt-8 border-t border-border-subtle">
+<button class="font-label-caps text-label-caps text-on-surface hover:text-text-muted px-6 py-3 transition-colors mr-2" type="button">Cancel</button>
+<button class="font-label-caps text-label-caps text-surface-white bg-accent-soft-purple rounded-full px-8 py-3 hover:opacity-80 transition-opacity" type="submit">Save Changes</button>
+</div>
+</form>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap px-margin-desktop flex flex-col md:flex-row justify-between items-center bg-surface dark:bg-inverse-surface border-t border-border-subtle dark:border-outline-variant mt-section-gap">
+<div class="mb-6 md:mb-0">
+<span class="font-headline-md text-headline-md text-on-surface dark:text-inverse-on-surface font-semibold tracking-tight">Visual Design Journey</span>
+<p class="font-body-md text-body-md text-text-muted dark:text-on-surface-variant mt-2">© 2024 Visual Design Journey. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap gap-6 justify-center">
+<a class="font-label-caps text-label-caps text-text-muted dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-caps text-label-caps text-text-muted dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-caps text-label-caps text-text-muted dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Archive</a>
+<a class="font-label-caps text-label-caps text-text-muted dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Contact</a>
+</div>
+</footer>
+</body></html>

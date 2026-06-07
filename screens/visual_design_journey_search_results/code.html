@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Search Results - Bauhaus | Visual Design Journey</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#faf8ff",
+                        "inverse-primary": "#c5c0ff",
+                        "surface": "#faf8ff",
+                        "surface-dim": "#d2d9f4",
+                        "secondary-fixed": "#e1e3e4",
+                        "primary-container": "#7067cc",
+                        "tertiary-fixed": "#ffdf98",
+                        "surface-container-low": "#f2f3ff",
+                        "on-tertiary-fixed-variant": "#5a4300",
+                        "outline": "#787583",
+                        "secondary-container": "#e1e3e4",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#eaedff",
+                        "accent-soft-purple": "#7F77DD",
+                        "on-primary-fixed": "#140067",
+                        "primary-fixed": "#e4dfff",
+                        "on-primary-container": "#fffbff",
+                        "surface-container-highest": "#dae2fd",
+                        "on-secondary-container": "#626566",
+                        "secondary-fixed-dim": "#c5c7c8",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#5951b4",
+                        "on-primary-fixed-variant": "#41379b",
+                        "on-background": "#131b2e",
+                        "on-tertiary-container": "#fffbff",
+                        "surface-variant": "#dae2fd",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#474552",
+                        "border-subtle": "#E9ECEF",
+                        "secondary": "#5c5f60",
+                        "on-secondary-fixed-variant": "#454748",
+                        "primary": "#574eb1",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#745800",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#efc04c",
+                        "surface-container-high": "#e2e7ff",
+                        "tertiary-container": "#926f00",
+                        "inverse-surface": "#283044",
+                        "on-secondary-fixed": "#191c1d",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#131b2e",
+                        "on-tertiary-fixed": "#251a00",
+                        "inverse-on-surface": "#eef0ff",
+                        "on-error": "#ffffff",
+                        "outline-variant": "#c8c4d4",
+                        "text-muted": "#454F5E",
+                        "surface-white": "#FFFFFF",
+                        "background": "#faf8ff",
+                        "primary-fixed-dim": "#c5c0ff",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "container-max": "1440px",
+                        "margin-desktop": "48px",
+                        "section-gap": "80px",
+                        "margin-tablet": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Manrope"],
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Manrope"],
+                        "headline-xl-mobile": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "caption": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-xl-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "caption": ["13px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 24px;
+        }
+        @media (min-width: 768px) {
+            .masonry-grid { column-count: 2; }
+        }
+        @media (min-width: 1024px) {
+            .masonry-grid { column-count: 3; }
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 24px;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop h-20 bg-surface-white/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-border-subtle dark:border-outline-variant flat no shadows">
+<div class="flex items-center gap-8">
+<a class="font-headline-md text-headline-md font-semibold text-on-surface dark:text-inverse-on-surface" href="#">Visual Design Journey</a>
+<div class="hidden md:flex items-center gap-6">
+<a class="font-label-caps text-label-caps text-accent-soft-purple dark:text-inverse-primary relative after:content-[''] after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-accent-soft-purple after:rounded-full hover:opacity-80 transition-opacity duration-200 uppercase" href="#">Explore</a>
+<a class="font-label-caps text-label-caps text-on-surface dark:text-inverse-on-surface hover:opacity-80 transition-opacity duration-200 uppercase" href="#">Curators</a>
+<a class="font-label-caps text-label-caps text-on-surface dark:text-inverse-on-surface hover:opacity-80 transition-opacity duration-200 uppercase" href="#">Trends</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block font-label-caps text-label-caps px-4 py-2 rounded-full border-[0.5px] border-border-subtle text-on-surface hover:bg-surface-dim transition-colors uppercase">Sign in</button>
+<button class="font-label-caps text-label-caps px-4 py-2 rounded-full bg-accent-soft-purple text-surface-white hover:opacity-80 transition-opacity uppercase">Create Board</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-32 px-margin-mobile md:px-margin-tablet lg:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Search Header Area -->
+<section class="mb-12">
+<div class="relative w-full max-w-2xl mx-auto mb-8">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-text-muted">search</span>
+<input class="w-full h-14 pl-12 pr-4 rounded-lg border-[0.5px] border-border-subtle bg-surface-white font-body-lg text-body-lg text-on-surface focus:outline-none focus:border-accent-soft-purple focus:ring-1 focus:ring-accent-soft-purple transition-all shadow-sm" placeholder="Search boards, curators, tags..." type="text" value="bauhaus"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 rounded-full p-1 hover:bg-surface-dim transition-colors">
+<span class="material-symbols-outlined text-text-muted text-sm">close</span>
+</button>
+</div>
+<!-- Metadata & Filters -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+<h1 class="font-headline-md text-headline-md text-on-surface">124 boards found for "bauhaus"</h1>
+<div class="flex items-center gap-3">
+<span class="font-caption text-caption text-text-muted">Sort by:</span>
+<button class="flex items-center gap-2 font-label-caps text-label-caps uppercase px-4 py-2 rounded-full border-[0.5px] border-border-subtle bg-surface-white hover:border-accent-soft-purple transition-colors">
+                        Relevance
+                        <span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+</button>
+</div>
+</div>
+<!-- Aesthetic Filter Tags -->
+<div class="flex flex-wrap gap-2 mb-12">
+<button class="font-label-caps text-label-caps uppercase px-4 py-2 rounded-full bg-accent-soft-purple text-surface-white transition-colors">All</button>
+<button class="font-label-caps text-label-caps uppercase px-4 py-2 rounded-full bg-surface-container-low text-on-surface hover:bg-border-subtle transition-colors">Architecture</button>
+<button class="font-label-caps text-label-caps uppercase px-4 py-2 rounded-full bg-surface-container-low text-on-surface hover:bg-border-subtle transition-colors">Typography</button>
+<button class="font-label-caps text-label-caps uppercase px-4 py-2 rounded-full bg-surface-container-low text-on-surface hover:bg-border-subtle transition-colors">Industrial Design</button>
+<button class="font-label-caps text-label-caps uppercase px-4 py-2 rounded-full bg-surface-container-low text-on-surface hover:bg-border-subtle transition-colors">Color Theory</button>
+<button class="font-label-caps text-label-caps uppercase px-4 py-2 rounded-full bg-surface-container-low text-on-surface hover:bg-border-subtle transition-colors">Minimalism</button>
+<button class="font-label-caps text-label-caps uppercase px-4 py-2 rounded-full bg-surface-container-low text-on-surface hover:bg-border-subtle transition-colors">Poster Art</button>
+</div>
+</section>
+<!-- Masonry Grid -->
+<section class="masonry-grid">
+<!-- Card 1 -->
+<article class="masonry-item rounded-lg border-[0.5px] border-border-subtle bg-surface-white overflow-hidden hover:border-accent-soft-purple transition-colors group cursor-pointer">
+<div class="relative w-full aspect-[4/5] bg-surface-container-low">
+<img alt="Geometric Bauhaus architecture" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A striking minimalist architectural photograph showcasing distinct Bauhaus geometric forms. The image features a stark white building facade with perfectly square primary-colored balconies in red, yellow, and blue. The sky above is a clear, vibrant gradient of light blue, enhancing the clean, sharp lines of the modernist structure. The lighting is bright and high-key, creating crisp shadows that emphasize the architectural volume in a premium editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxsZAbdEa8AwDQSwcwRhMOuj6cheCPyDRQRyswSDguENcUJPbDF0aD2CsqwGS-9aVEmQKPQ5V9VGJaXiiqqipK3PEVcy3UnQoUiAm0sy0TWWQ70UMyaaPCzyEu4q5dYJK5l3Vp5zJ3Xvr2kNq-TDgTxH5IrGfwEtyszmA4HU_Y-ZWXSSYwEX5IWHxGUcKK73jkCtc0DNZRnXfG0bm_VLoBkXmJ6cUZABFFI6NM-Lqxc0TrSb2DdUIOyOVmmVhBKX8seKkHkSr4CO2_"/>
+<button class="absolute top-4 right-4 w-8 h-8 rounded-full bg-surface-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-text-muted text-sm" style="font-variation-settings: 'FILL' 0;">bookmark</span>
+</button>
+</div>
+<div class="p-4">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface mb-1">Dessau Archives</h3>
+<p class="font-caption text-caption text-text-muted flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-dim overflow-hidden flex items-center justify-center">
+<img alt="Curator avatar" class="w-full h-full object-cover" data-alt="A small, circular avatar portrait of a modern designer with minimalist styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi59zDS9nbnFBJyHYmzQm_O_-t14F9J5mBK1EukWdZwwo12kbgAFPqgtnnFUEpadhaGSqEgldUKzoTpIrTNYoj6g9xgaVQ-cxj7mB0reKa5j5sawGRPyq2FbAKLvfBtGnEQVnmpO-eTcgt8n3LfJUjyZ0Pk7jMAl6AxnuqK3N8dDK60VTV5KpO0gmtyJDpSUZwy4AVpnoEMROIcOSZBvxjdMZQcLGt00x0s3aiF2rU1q2D5U0OFGYbz0nLl-OgmUNZA-2fotPtxFSq"/>
+</span>
+                        Curated by Elena Rostova
+                    </p>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="masonry-item rounded-lg border-[0.5px] border-border-subtle bg-surface-white overflow-hidden hover:border-accent-soft-purple transition-colors group cursor-pointer">
+<div class="relative w-full aspect-[3/4] bg-surface-container-low">
+<img alt="Abstract geometric composition" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A flat-lay abstract composition demonstrating Bauhaus color theory principles. The image features perfectly cut geometric shapes—circles, triangles, and squares—arranged carefully on a pristine white background. The shapes are rendered in solid, untextured primary colors (cadmium red, cobalt blue, and golden yellow). The composition is balanced and asymmetrical, shot with soft, diffused overhead lighting that eliminates harsh shadows, reflecting a clean, digital magazine aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp7rSf89-rXk2p5FaJsDSv7dlNHtwljBtnhCpEiPbYZLkyly19ssXVUFfZ3pjRjwQE535JmsR4PmuHE7zf9llN7xxST5_mY7aOb7O0wlHXNJAOAaaDlzI9JiAme-LEPcZxtI3JsDG4l1XUrjQ6NIBkXPuL8ltNlQfBK6n-8xtKOuyuv-simsrIj6bV46pOqntVkqaMz48O97JoOTJD_YWKbCIhqGw2N3KtGPpBrSZ30H94knBUPqHP997qxk7vwX-PR7lkUQJfs97S"/>
+<button class="absolute top-4 right-4 w-8 h-8 rounded-full bg-surface-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-text-muted text-sm" style="font-variation-settings: 'FILL' 0;">bookmark</span>
+</button>
+</div>
+<div class="p-4">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface mb-1">Primary Forms</h3>
+<p class="font-caption text-caption text-text-muted flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-dim overflow-hidden flex items-center justify-center">
+<span class="font-label-caps text-[10px]">MD</span>
+</span>
+                        Curated by Marcus Dawn
+                    </p>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="masonry-item rounded-lg border-[0.5px] border-border-subtle bg-surface-white overflow-hidden hover:border-accent-soft-purple transition-colors group cursor-pointer">
+<div class="relative w-full aspect-square bg-surface-container-low">
+<img alt="Typography poster" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A minimalist vintage-style typography poster heavily influenced by the Bauhaus movement. The design features large, bold sans-serif lettering arranged diagonally across the canvas, intersecting with thick black grid lines. The background is an off-white, slightly textured paper tone, while the text and graphic elements are stark black with a single bright red accent circle. The overall mood is structured, utilitarian, and highly graphic, suitable for a sophisticated design gallery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM7BBN09vKgQRbBA1Wd7H-BaZA6wKkMyjdytEdtTzBht9LXbhuKlOmMK2yAe8HaU0gfkSHcFJ4k0xDCOYTSu1Bs6cpD8-V0EJIuVoEJJVpSWC0hMkY3ABTk-KuGIhLHEatyWjYkg6tq3c_mDFMkKueATDg0D-y2MfKo2t2DZDXczSHi13lBmeMR6HnFmazY1EcjoRazucdjX16-H0rWizHJe0BC6G3Z9Y9uUkNVe-kW4V7WhcNQtFpiRchK3jtfe-pQCoe8tdphVIA"/>
+<button class="absolute top-4 right-4 w-8 h-8 rounded-full bg-surface-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-text-muted text-sm" style="font-variation-settings: 'FILL' 0;">bookmark</span>
+</button>
+</div>
+<div class="p-4">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface mb-1">Grid Systems &amp; Type</h3>
+<p class="font-caption text-caption text-text-muted flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-dim overflow-hidden flex items-center justify-center">
+<span class="font-label-caps text-[10px]">ST</span>
+</span>
+                        Curated by Studio Type
+                    </p>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="masonry-item rounded-lg border-[0.5px] border-border-subtle bg-surface-white overflow-hidden hover:border-accent-soft-purple transition-colors group cursor-pointer">
+<div class="relative w-full aspect-[4/3] bg-surface-container-low">
+<img alt="Modernist interior space" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An interior shot of a minimalist living space embodying Bauhaus design philosophy. The room features a classic tubular steel chair with black leather upholstery, positioned on a polished concrete floor. Large, unadorned windows let in abundant natural, bright white light, casting subtle shadows across clean white walls. The scene is devoid of clutter, focusing purely on functional form and materials, maintaining a serene, high-end editorial atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_yIp3nFnxnS3vCZX9rY_I83DSmzb3G17LJVUaeguEU5D5yyStWzSjFxc1IZVi2J2olSb6Fw4r5eUspPnQ7epeH8vcrXYzu1_4CfbccJOt_sUovgzAw3rk5SqyNgtvamwN7UDtGFc0QO-oSVKN7haCp1zoYohgwrfv1O-h8dieA7R5FZ3vEONYx9iLsI89IzEWd0JiTiXIBhXwdmblNZHcB6BvYIxvbTLK4vizrXPrtsOY-JM1an2R7yUZ28Ps-nsTrPk5u4lZSia8"/>
+<button class="absolute top-4 right-4 w-8 h-8 rounded-full bg-surface-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-text-muted text-sm" style="font-variation-settings: 'FILL' 0;">bookmark</span>
+</button>
+</div>
+<div class="p-4">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface mb-1">Form Follows Function</h3>
+<p class="font-caption text-caption text-text-muted flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-dim overflow-hidden flex items-center justify-center">
+<img alt="Curator avatar" class="w-full h-full object-cover" data-alt="A small, circular avatar portrait of a modern designer with minimalist styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxKqT_PDgJvyR9M6bq0Jd3rOnstWMQJZP0NW4lv9lGAJUuPlQiwLEVUI71IruVdDOrBHST2vipeOoB_jPQy-TBtyFJHUPki4lndsEmbw0JWEjV1sOELxPWN5jd4BDWiSOVWgBx73k2dJAAwFh5iGfisBG8cCyKSKjeGZP9MIhcDUZUJL_WgUtwHqeBafJUM5BaM61zU4HJPPooGLZPWxQwxpGdDG1wlJQiPD7pUnkqeJgmBJal50XbhXNWaSSn2m8h-hLsNNpHktQl"/>
+</span>
+                        Curated by James Chen
+                    </p>
+</div>
+</article>
+</section>
+<!-- Pagination -->
+<div class="flex justify-center items-center gap-2 mt-12 mb-24">
+<button class="w-10 h-10 rounded-full border-[0.5px] border-border-subtle flex items-center justify-center text-text-muted hover:border-accent-soft-purple transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-accent-soft-purple text-surface-white font-label-caps text-label-caps">1</button>
+<button class="w-10 h-10 rounded-full border-[0.5px] border-border-subtle flex items-center justify-center text-on-surface hover:border-accent-soft-purple transition-colors font-label-caps text-label-caps">2</button>
+<button class="w-10 h-10 rounded-full border-[0.5px] border-border-subtle flex items-center justify-center text-on-surface hover:border-accent-soft-purple transition-colors font-label-caps text-label-caps">3</button>
+<span class="text-text-muted px-2">...</span>
+<button class="w-10 h-10 rounded-full border-[0.5px] border-border-subtle flex items-center justify-center text-text-muted hover:border-accent-soft-purple transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap px-margin-desktop flex flex-col md:flex-row justify-between items-center bg-surface dark:bg-inverse-surface border-t border-border-subtle dark:border-outline-variant flat no shadows">
+<div class="mb-6 md:mb-0">
+<span class="font-headline-md text-headline-md text-on-surface dark:text-inverse-on-surface">Visual Design Journey</span>
+<p class="font-body-md text-body-md text-text-muted dark:text-on-surface-variant mt-2">© 2024 Visual Design Journey. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap gap-6 justify-center">
+<a class="font-label-caps text-label-caps text-text-muted dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors uppercase" href="#">Privacy Policy</a>
+<a class="font-label-caps text-label-caps text-text-muted dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors uppercase" href="#">Terms of Service</a>
+<a class="font-label-caps text-label-caps text-text-muted dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors uppercase" href="#">Archive</a>
+<a class="font-label-caps text-label-caps text-text-muted dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors uppercase" href="#">Contact</a>
+</div>
+</footer>
+</body></html>

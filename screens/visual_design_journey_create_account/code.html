@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Visual Design Journey - Sign Up</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#faf8ff",
+                        "inverse-primary": "#c5c0ff",
+                        "surface": "#faf8ff",
+                        "surface-dim": "#d2d9f4",
+                        "secondary-fixed": "#e1e3e4",
+                        "primary-container": "#7067cc",
+                        "tertiary-fixed": "#ffdf98",
+                        "surface-container-low": "#f2f3ff",
+                        "on-tertiary-fixed-variant": "#5a4300",
+                        "outline": "#787583",
+                        "secondary-container": "#e1e3e4",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#eaedff",
+                        "accent-soft-purple": "#7F77DD",
+                        "on-primary-fixed": "#140067",
+                        "primary-fixed": "#e4dfff",
+                        "on-primary-container": "#fffbff",
+                        "surface-container-highest": "#dae2fd",
+                        "on-secondary-container": "#626566",
+                        "secondary-fixed-dim": "#c5c7c8",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#5951b4",
+                        "on-primary-fixed-variant": "#41379b",
+                        "on-background": "#131b2e",
+                        "on-tertiary-container": "#fffbff",
+                        "surface-variant": "#dae2fd",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#474552",
+                        "border-subtle": "#E9ECEF",
+                        "secondary": "#5c5f60",
+                        "on-secondary-fixed-variant": "#454748",
+                        "primary": "#574eb1",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#745800",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#efc04c",
+                        "surface-container-high": "#e2e7ff",
+                        "tertiary-container": "#926f00",
+                        "inverse-surface": "#283044",
+                        "on-secondary-fixed": "#191c1d",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#131b2e",
+                        "on-tertiary-fixed": "#251a00",
+                        "inverse-on-surface": "#eef0ff",
+                        "on-error": "#ffffff",
+                        "outline-variant": "#c8c4d4",
+                        "text-muted": "#454F5E",
+                        "surface-white": "#FFFFFF",
+                        "background": "#faf8ff",
+                        "primary-fixed-dim": "#c5c0ff",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "container-max": "1440px",
+                        "margin-desktop": "48px",
+                        "section-gap": "80px",
+                        "margin-tablet": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Manrope"],
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Manrope"],
+                        "headline-xl-mobile": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "caption": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-xl-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "caption": ["13px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col items-center justify-center p-margin-mobile md:p-margin-desktop">
+<!-- TopNavBar Suppressed: Transactional intent (Sign Up) -->
+<main class="w-full max-w-md w-full bg-surface-white rounded-xl border border-border-subtle p-8 md:p-12 relative overflow-hidden">
+<!-- Decorative Header Background -->
+<div class="absolute top-0 left-0 w-full h-32 bg-surface-container-low -z-10"></div>
+<div class="text-center mb-10">
+<h1 class="font-headline-md text-headline-md text-on-surface mb-2">Create Account</h1>
+<p class="font-body-md text-body-md text-text-muted">Join the visual design community.</p>
+</div>
+<!-- Stepper -->
+<div class="flex items-center justify-between mb-10 px-4 relative">
+<div class="absolute top-1/2 left-8 right-8 h-[0.5px] bg-border-subtle -z-10 transform -translate-y-1/2"></div>
+<!-- Step 1: Active -->
+<div class="flex flex-col items-center gap-2 bg-surface-white">
+<div class="w-8 h-8 rounded-full bg-accent-soft-purple text-surface-white flex items-center justify-center font-label-caps text-label-caps">1</div>
+<span class="font-label-caps text-label-caps text-accent-soft-purple">Account</span>
+</div>
+<!-- Step 2: Inactive -->
+<div class="flex flex-col items-center gap-2 bg-surface-white">
+<div class="w-8 h-8 rounded-full border border-border-subtle bg-surface-white text-text-muted flex items-center justify-center font-label-caps text-label-caps">2</div>
+<span class="font-label-caps text-label-caps text-text-muted">Style</span>
+</div>
+<!-- Step 3: Inactive -->
+<div class="flex flex-col items-center gap-2 bg-surface-white">
+<div class="w-8 h-8 rounded-full border border-border-subtle bg-surface-white text-text-muted flex items-center justify-center font-label-caps text-label-caps">3</div>
+<span class="font-label-caps text-label-caps text-text-muted">Explore</span>
+</div>
+</div>
+<!-- Form -->
+<form class="space-y-6">
+<div class="space-y-2">
+<label class="block font-label-caps text-label-caps text-on-surface" for="username">Username</label>
+<input class="w-full bg-transparent border border-border-subtle rounded-md px-4 py-3 font-body-md text-body-md text-on-surface focus:border-accent-soft-purple focus:ring-0 focus:outline-none transition-colors" id="username" name="username" placeholder="e.g. visualartist" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block font-label-caps text-label-caps text-on-surface" for="email">Email Address</label>
+<input class="w-full bg-transparent border border-border-subtle rounded-md px-4 py-3 font-body-md text-body-md text-on-surface focus:border-accent-soft-purple focus:ring-0 focus:outline-none transition-colors" id="email" name="email" placeholder="name@domain.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="block font-label-caps text-label-caps text-on-surface" for="password">Password</label>
+<div class="relative">
+<input class="w-full bg-transparent border border-border-subtle rounded-md px-4 py-3 font-body-md text-body-md text-on-surface focus:border-accent-soft-purple focus:ring-0 focus:outline-none transition-colors" id="password" name="password" placeholder="••••••••" type="password"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-text-muted hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block font-label-caps text-label-caps text-on-surface" for="confirm_password">Confirm Password</label>
+<input class="w-full bg-transparent border border-border-subtle rounded-md px-4 py-3 font-body-md text-body-md text-on-surface focus:border-accent-soft-purple focus:ring-0 focus:outline-none transition-colors" id="confirm_password" name="confirm_password" placeholder="••••••••" type="password"/>
+</div>
+<button class="w-full bg-accent-soft-purple text-surface-white font-label-caps text-label-caps rounded-full py-4 px-6 hover:opacity-90 transition-opacity mt-4 flex items-center justify-center gap-2" type="button">
+                Continue
+                <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+<div class="mt-8 text-center border-t border-border-subtle pt-8">
+<p class="font-body-md text-body-md text-text-muted">
+                Already have an account? 
+                <a class="text-on-surface font-semibold hover:text-accent-soft-purple transition-colors ml-1" href="#">Sign in</a>
+</p>
+</div>
+</main>
+<!-- Footer Suppressed: Transactional intent (Sign Up) -->
+</body></html>

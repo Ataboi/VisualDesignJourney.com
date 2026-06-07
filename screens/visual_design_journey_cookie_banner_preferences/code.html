@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Visual Design Journey - Cookie Preferences</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#5c5f60",
+                        "outline-variant": "#c8c4d4",
+                        "on-primary-fixed-variant": "#41379b",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#5a4300",
+                        "on-secondary-container": "#626566",
+                        "secondary-fixed-dim": "#c5c7c8",
+                        "on-tertiary-container": "#fffbff",
+                        "on-surface": "#131b2e",
+                        "tertiary-fixed": "#ffdf98",
+                        "surface-container": "#eaedff",
+                        "on-primary-fixed": "#140067",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#e1e3e4",
+                        "error": "#ba1a1a",
+                        "accent-soft-purple": "#7F77DD",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#d2d9f4",
+                        "surface-bright": "#faf8ff",
+                        "primary-container": "#7067cc",
+                        "on-background": "#131b2e",
+                        "surface": "#faf8ff",
+                        "on-secondary-fixed": "#191c1d",
+                        "inverse-primary": "#c5c0ff",
+                        "outline": "#787583",
+                        "primary-fixed-dim": "#c5c0ff",
+                        "on-primary-container": "#fffbff",
+                        "on-surface-variant": "#474552",
+                        "surface-white": "#FFFFFF",
+                        "primary-fixed": "#e4dfff",
+                        "inverse-surface": "#283044",
+                        "surface-container-high": "#e2e7ff",
+                        "secondary-fixed": "#e1e3e4",
+                        "text-muted": "#454F5E",
+                        "tertiary": "#745800",
+                        "on-secondary-fixed-variant": "#454748",
+                        "surface-tint": "#5951b4",
+                        "primary": "#574eb1",
+                        "tertiary-fixed-dim": "#efc04c",
+                        "surface-container-highest": "#dae2fd",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#926f00",
+                        "background": "#faf8ff",
+                        "on-tertiary-fixed": "#251a00",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#dae2fd",
+                        "inverse-on-surface": "#eef0ff",
+                        "surface-container-low": "#f2f3ff",
+                        "border-subtle": "#E9ECEF"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "margin-tablet": "32px",
+                        "section-gap": "80px",
+                        "margin-desktop": "48px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "caption": ["Inter"],
+                        "headline-xl-mobile": ["Manrope"],
+                        "headline-xl": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "caption": ["13px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "headline-xl-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-xl": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen relative antialiased flex flex-col">
+<!-- TopNavBar (Shared Component Shell) -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop h-20 bg-surface-white/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-border-subtle dark:border-outline-variant">
+<div class="font-headline-md text-headline-md font-semibold text-on-surface dark:text-inverse-on-surface">Visual Design Journey</div>
+<ul class="hidden md:flex items-center gap-8 font-label-caps text-label-caps">
+<li class="text-accent-soft-purple dark:text-inverse-primary relative after:content-[''] after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-accent-soft-purple after:rounded-full cursor-pointer">Explore</li>
+<li class="text-on-surface dark:text-inverse-on-surface hover:opacity-80 transition-opacity duration-200 cursor-pointer">Curators</li>
+<li class="text-on-surface dark:text-inverse-on-surface hover:opacity-80 transition-opacity duration-200 cursor-pointer">Trends</li>
+</ul>
+<div class="hidden md:flex items-center gap-4">
+<button class="px-6 py-2 rounded-full border border-border-subtle bg-transparent text-on-surface font-label-caps text-label-caps hover:bg-surface-container-low transition-colors">Sign in</button>
+<button class="px-6 py-2 rounded-full bg-accent-soft-purple text-surface-white font-label-caps text-label-caps hover:opacity-80 transition-opacity">Create Board</button>
+</div>
+</nav>
+<!-- Canvas Filler Content -->
+<main class="flex-grow pt-[160px] px-margin-desktop pb-section-gap max-w-container-max mx-auto w-full">
+<div class="w-full h-[614px] rounded-lg border border-border-subtle bg-surface flex items-center justify-center">
+<p class="font-headline-md text-headline-md text-text-muted">Gallery Canvas Content Area</p>
+</div>
+</main>
+<!-- Footer (Shared Component Shell) -->
+<footer class="w-full py-section-gap px-margin-desktop flex flex-col md:flex-row justify-between items-center bg-surface dark:bg-inverse-surface border-t border-border-subtle dark:border-outline-variant mt-auto">
+<div class="font-headline-md text-headline-md text-on-surface dark:text-inverse-on-surface mb-6 md:mb-0">Visual Design Journey</div>
+<ul class="flex flex-wrap justify-center gap-6 font-label-caps text-label-caps text-text-muted dark:text-on-surface-variant mb-6 md:mb-0">
+<li class="hover:text-primary dark:hover:text-inverse-primary transition-colors cursor-pointer">Privacy Policy</li>
+<li class="hover:text-primary dark:hover:text-inverse-primary transition-colors cursor-pointer">Terms of Service</li>
+<li class="hover:text-primary dark:hover:text-inverse-primary transition-colors cursor-pointer">Archive</li>
+<li class="hover:text-primary dark:hover:text-inverse-primary transition-colors cursor-pointer">Contact</li>
+</ul>
+<div class="font-body-md text-body-md text-primary dark:text-inverse-primary">© 2024 Visual Design Journey. All rights reserved.</div>
+</footer>
+<!-- Bottom Cookie Banner Overlay -->
+<div class="fixed bottom-0 left-0 w-full bg-surface-white border-t border-border-subtle z-[60] px-margin-mobile md:px-margin-desktop py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-[0_-4px_24px_rgba(0,0,0,0.02)]">
+<div class="flex items-start md:items-center gap-4 text-on-surface max-w-3xl">
+<span class="material-symbols-outlined text-primary flex-shrink-0" style="font-variation-settings: 'FILL' 1;">cookie</span>
+<p class="font-body-md text-body-md text-on-surface">We use cookies to personalize your experience and analyze traffic.</p>
+</div>
+<div class="flex items-center gap-4 w-full md:w-auto flex-shrink-0">
+<button class="w-full md:w-auto px-6 py-3 rounded-full border border-border-subtle bg-transparent text-on-surface font-label-caps text-label-caps hover:bg-surface-container-low transition-colors">Manage Preferences</button>
+<button class="w-full md:w-auto px-6 py-3 rounded-full bg-accent-soft-purple text-surface-white font-label-caps text-label-caps hover:opacity-80 transition-opacity">Accept All</button>
+</div>
+</div>
+<!-- Centered Modal Overlay (Active State) -->
+<div class="fixed inset-0 z-[70] bg-surface-white/80 backdrop-blur-md flex items-center justify-center p-margin-mobile">
+<div class="w-full max-w-[480px] bg-surface-white border border-border-subtle rounded-lg flex flex-col">
+<!-- Modal Header -->
+<div class="p-6 border-b border-border-subtle flex justify-between items-center">
+<h2 class="font-headline-md text-headline-md text-on-surface">Cookie Preferences</h2>
+<button class="text-text-muted hover:text-on-surface transition-colors focus:outline-none">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-6 flex flex-col gap-6">
+<!-- Toggle Row: Essential (Locked) -->
+<div class="flex justify-between items-center gap-6">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface">Essential</span>
+<span class="font-caption text-caption text-text-muted mt-1">Necessary for the platform's core minimal layout and gallery functions.</span>
+</div>
+<!-- Visual Toggle Component - Locked/On -->
+<div class="w-11 h-6 bg-surface-container-highest rounded-full relative flex-shrink-0 opacity-50 cursor-not-allowed">
+<div class="w-4 h-4 bg-surface-white rounded-full absolute top-1 right-1 shadow-sm"></div>
+</div>
+</div>
+<!-- Toggle Row: Analytics -->
+<div class="flex justify-between items-center gap-6">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface">Analytics</span>
+<span class="font-caption text-caption text-text-muted mt-1">Helps us understand how curators interact with mood boards.</span>
+</div>
+<!-- Visual Toggle Component - On -->
+<div class="w-11 h-6 bg-accent-soft-purple rounded-full relative flex-shrink-0 cursor-pointer hover:opacity-90 transition-opacity">
+<div class="w-4 h-4 bg-surface-white rounded-full absolute top-1 right-1 shadow-sm"></div>
+</div>
+</div>
+<!-- Toggle Row: Marketing -->
+<div class="flex justify-between items-center gap-6">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface">Marketing</span>
+<span class="font-caption text-caption text-text-muted mt-1">Used to deliver tailored design inspiration to your feed.</span>
+</div>
+<!-- Visual Toggle Component - Off -->
+<div class="w-11 h-6 bg-surface-variant rounded-full relative flex-shrink-0 cursor-pointer hover:opacity-90 transition-opacity">
+<div class="w-4 h-4 bg-surface-white rounded-full absolute top-1 left-1 shadow-sm"></div>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="p-6 border-t border-border-subtle flex justify-end">
+<button class="px-8 py-3 rounded-full bg-accent-soft-purple text-surface-white font-label-caps text-label-caps hover:opacity-80 transition-opacity">Save Preferences</button>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Visual Design Journey - Main Feed</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#7067cc",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#e1e3e4",
+                        "border-subtle": "#E9ECEF",
+                        "accent-soft-purple": "#7F77DD",
+                        "on-tertiary-fixed": "#251a00",
+                        "text-muted": "#454F5E",
+                        "on-primary-fixed-variant": "#41379b",
+                        "on-background": "#131b2e",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#c5c7c8",
+                        "surface-container-highest": "#dae2fd",
+                        "on-surface": "#131b2e",
+                        "inverse-primary": "#c5c0ff",
+                        "tertiary-fixed-dim": "#efc04c",
+                        "on-secondary-fixed": "#191c1d",
+                        "tertiary-container": "#926f00",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "surface-container": "#eaedff",
+                        "surface": "#faf8ff",
+                        "on-secondary-fixed-variant": "#454748",
+                        "tertiary": "#745800",
+                        "surface-white": "#FFFFFF",
+                        "primary": "#574eb1",
+                        "surface-variant": "#dae2fd",
+                        "outline-variant": "#c8c4d4",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#283044",
+                        "on-primary-fixed": "#140067",
+                        "on-primary-container": "#fffbff",
+                        "surface-tint": "#5951b4",
+                        "inverse-on-surface": "#eef0ff",
+                        "on-tertiary-fixed-variant": "#5a4300",
+                        "on-tertiary-container": "#fffbff",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#e2e7ff",
+                        "on-surface-variant": "#474552",
+                        "tertiary-fixed": "#ffdf98",
+                        "outline": "#787583",
+                        "background": "#faf8ff",
+                        "surface-dim": "#d2d9f4",
+                        "surface-bright": "#faf8ff",
+                        "secondary": "#5c5f60",
+                        "primary-fixed-dim": "#c5c0ff",
+                        "primary-fixed": "#e4dfff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f2f3ff",
+                        "on-secondary-container": "#626566",
+                        "secondary-fixed": "#e1e3e4",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "48px",
+                        "section-gap": "80px",
+                        "margin-tablet": "32px",
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Manrope"],
+                        "body-md": ["Inter"],
+                        "headline-xl-mobile": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "caption": ["Inter"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "caption": ["13px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased selection:bg-accent-soft-purple selection:text-white">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop h-20 bg-surface-white/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-border-subtle dark:border-outline-variant">
+<!-- Logo -->
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-semibold text-on-surface dark:text-inverse-on-surface">Visual Design Journey</span>
+</div>
+<!-- Center: Nav Links & Search -->
+<div class="flex items-center gap-8">
+<ul class="hidden md:flex items-center gap-6 font-label-caps text-label-caps">
+<li><a class="text-accent-soft-purple dark:text-inverse-primary relative after:content-[''] after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-accent-soft-purple after:rounded-full hover:opacity-80 transition-opacity duration-200" href="#">Explore</a></li>
+<li><a class="text-on-surface dark:text-inverse-on-surface hover:opacity-80 transition-opacity duration-200" href="#">Curators</a></li>
+<li><a class="text-on-surface dark:text-inverse-on-surface hover:opacity-80 transition-opacity duration-200" href="#">Trends</a></li>
+</ul>
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-[18px]">search</span>
+<input class="w-full h-10 pl-10 pr-4 bg-transparent border-[0.5px] border-border-subtle rounded-full text-body-md font-body-md focus:outline-none focus:border-accent-soft-purple transition-colors placeholder:text-text-muted" placeholder="Search boards..." type="text"/>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<button class="font-label-caps text-label-caps text-on-surface px-6 py-2 rounded-full border-[0.5px] border-border-subtle hover:bg-surface-container-low transition-colors duration-200">Sign in</button>
+<button class="font-label-caps text-label-caps text-on-primary bg-accent-soft-purple px-6 py-2 rounded-full hover:opacity-90 transition-opacity duration-200">Create Board</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="max-w-[1440px] mx-auto px-margin-desktop pt-[120px] pb-section-gap min-h-screen">
+<!-- Filter Tags -->
+<div class="flex items-center gap-3 mb-10 overflow-x-auto pb-4 scrollbar-hide">
+<button class="px-5 py-2 rounded-full bg-accent-soft-purple text-on-primary font-label-caps text-label-caps whitespace-nowrap shrink-0">All</button>
+<button class="px-5 py-2 rounded-full bg-surface-white border-[0.5px] border-border-subtle text-on-surface font-label-caps text-label-caps whitespace-nowrap hover:bg-surface-container-low transition-colors shrink-0">Minimal</button>
+<button class="px-5 py-2 rounded-full bg-surface-white border-[0.5px] border-border-subtle text-on-surface font-label-caps text-label-caps whitespace-nowrap hover:bg-surface-container-low transition-colors shrink-0">Bauhaus</button>
+<button class="px-5 py-2 rounded-full bg-surface-white border-[0.5px] border-border-subtle text-on-surface font-label-caps text-label-caps whitespace-nowrap hover:bg-surface-container-low transition-colors shrink-0">Y2K</button>
+<button class="px-5 py-2 rounded-full bg-surface-white border-[0.5px] border-border-subtle text-on-surface font-label-caps text-label-caps whitespace-nowrap hover:bg-surface-container-low transition-colors shrink-0">Art Nouveau</button>
+<button class="px-5 py-2 rounded-full bg-surface-white border-[0.5px] border-border-subtle text-on-surface font-label-caps text-label-caps whitespace-nowrap hover:bg-surface-container-low transition-colors shrink-0">Brutalist</button>
+<button class="px-5 py-2 rounded-full bg-surface-white border-[0.5px] border-border-subtle text-on-surface font-label-caps text-label-caps whitespace-nowrap hover:bg-surface-container-low transition-colors shrink-0">Flat Design</button>
+<button class="px-5 py-2 rounded-full bg-surface-white border-[0.5px] border-border-subtle text-on-surface font-label-caps text-label-caps whitespace-nowrap hover:bg-surface-container-low transition-colors shrink-0">Dark Academia</button>
+</div>
+<!-- Masonry Grid -->
+<div class="columns-1 md:columns-2 lg:columns-3 gap-gutter">
+<!-- Card 1 (New Badge) -->
+<article class="break-inside-avoid mb-gutter rounded-lg border-[0.5px] border-border-subtle bg-surface-white overflow-hidden group hover:border-accent-soft-purple transition-colors duration-300 relative">
+<div class="absolute top-4 left-4 bg-surface-white border-[0.5px] border-border-subtle px-3 py-1 rounded-full z-10 shadow-sm">
+<span class="font-label-caps text-[10px] text-accent-soft-purple">NEW</span>
+</div>
+<div class="aspect-[3/4] w-full bg-surface-container-low">
+<img alt="Minimalist architectural editorial" class="w-full h-full object-cover" data-alt="A highly curated, editorial photography shot of a minimalist architectural interior. High key lighting illuminates smooth concrete surfaces and stark geometric lines. The palette is dominated by warm off-whites, cool grays, and a single accent of deep charcoal. The mood is silent, gallery-like, and meticulously composed, perfectly fitting a premium modern design mood board." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-JwV6FNOQ57ZF5PdwVXidZqGqOWFRC0IVWLfnj_JD5TIAk4Cp81n-cyO4aZueq4RuDUlf6zJFfT7D4KAE1-2nsmol0AdBj3E3kOPiuaqM4K4OHOp2QMqfyRdHo49SuhDrS81qCl_9T1ftIDvIZXBycUXvNBCB7lFFO-TesCNHoYkqI22zlG1b18Ns7xQl-Rskrd2DJog5ZwVFZmO_gKeWxvftOMu_UgILUw6U2-27E2MkY0_EbHF1zNlxx33Cf3ngQncOV5uGg_Tb"/>
+</div>
+<div class="p-4">
+<div class="flex gap-1 mb-4">
+<div class="w-4 h-4 rounded-sm bg-[#EFEFEF]"></div>
+<div class="w-4 h-4 rounded-sm bg-[#D4D4D4]"></div>
+<div class="w-4 h-4 rounded-sm bg-[#A3A3A3]"></div>
+<div class="w-4 h-4 rounded-sm bg-[#525252]"></div>
+<div class="w-4 h-4 rounded-sm bg-[#171717]"></div>
+</div>
+<h3 class="font-body-md text-body-md font-medium text-on-surface mb-3 line-clamp-1">Brutalist Concrete Textures</h3>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<img alt="Creator avatar" class="w-6 h-6 rounded-full border-[0.5px] border-border-subtle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_d-PkAjVU1DGcgyP96DSha43kjj5xqiRUhePR9Wh6cEHrTiUVNhU1jIcQTxDbEqyNB4c3IRpRv8IkmZ2JpnSZcumd-GEcCliiMfozPAIVUuoXyVeywDqdir92wUuZNNnduKJVgLeE71LM1-2wL2iHIE2P4nP9a6CPOjeauPzsGkephzLvGeYiN-YJfnGmnrw9jHS69oXuQapzlWRw5UQAEzsFuLdmD5_NLfWpXAHBNrxC4Zt-z4-1DYsLiwdUPOr7iXxkxuYQxoli"/>
+<span class="font-caption text-caption text-text-muted">Studio Void</span>
+</div>
+<div class="flex items-center gap-1 text-text-muted">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+<span class="font-caption text-caption">1.2k</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 2 (Hover State Simulated) -->
+<article class="break-inside-avoid mb-gutter rounded-lg border-[0.5px] border-accent-soft-purple bg-surface-white overflow-hidden group transition-colors duration-300">
+<div class="aspect-[3/3.5] w-full bg-surface-container-low">
+<img alt="Bauhaus typography poster" class="w-full h-full object-cover" data-alt="A striking graphic design poster featuring classic Bauhaus design principles. Bold, primary colors—cadmium red, cobalt blue, and brilliant yellow—are arranged in strict geometric compositions alongside stark black sans-serif typography. The layout relies on extreme whitespace and grid-based alignment. The aesthetic is purely functional, vintage modernist, and highly graphic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAU-oI6zY_0mqc1q7CxV3hGJlgpzwk6gZFxDh7gAIFeDVJFAIGNgQoGdKnDFu2DTIsasfG9DMjXd3Rhi9KmFzfqmoGot87K5Wu0iCDmfd1CB35jpHL3wXZ-63eA5q2lNC_O-e1CrihnKVxWPsn3wC_W-mWxV9R9F-BM8agIhduCbd5g_Y5HQOuqN_IgRWkZxSkCHX50yB1peHgZBHgkAY89v1BHgd37PPWMyfbuGMxEvNBa1F6j8sZbJLh_G-x9rV_BYU45Di95dh3v"/>
+</div>
+<div class="p-4">
+<div class="flex gap-1 mb-4">
+<div class="w-4 h-4 rounded-sm bg-[#F9F9F9]"></div>
+<div class="w-4 h-4 rounded-sm bg-[#FFCC00]"></div>
+<div class="w-4 h-4 rounded-sm bg-[#E03A3E]"></div>
+<div class="w-4 h-4 rounded-sm bg-[#00529B]"></div>
+<div class="w-4 h-4 rounded-sm bg-[#111111]"></div>
+</div>
+<h3 class="font-body-md text-body-md font-medium text-on-surface mb-3 line-clamp-1">Bauhaus Foundations Vol. 2</h3>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<img alt="Creator avatar" class="w-6 h-6 rounded-full border-[0.5px] border-border-subtle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYpVN0vu6W8uIOkd53GpGR_vVF6otHe68MTsGYVpn_l5bOXtJCEg24_e6s97yuJaV9t6RIHx0iSJXJPbH6OMw88C2Tav3ZCHsXg3uZxzeb555IWPk_rnWcsS_76fZwv-oIRHaH6NjQi2hOD2L55as9OECiy8pMad36aUX9PNoTEdV0_f34sZpvyhLznvdXbF72zQv1Tukx0ku-GnqHFlhcgty_63t8KXmFIVXaUEx5xEsGmLdu6UYV7C2KGskgV7NSdMjC-k6Hq_33"/>
+<span class="font-caption text-caption text-text-muted">Elena_Design</span>
+</div>
+<div class="flex items-center gap-1 text-accent-soft-purple">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-caption text-caption">843</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="break-inside-avoid mb-gutter rounded-lg border-[0.5px] border-border-subtle bg-surface-white overflow-hidden group hover:border-accent-soft-purple transition-colors duration-300">
+<div class="aspect-[3/4.5] w-full bg-surface-container-low">
+<img alt="Abstract fluid 3D render" class="w-full h-full object-cover" data-alt="A smooth, fluid 3D rendered abstract shape resting in a neutral, brightly lit environment. The shape features a soft, matte gradient transitioning from a muted lavender to a pale, misty blue. The lighting is diffused, casting no harsh shadows, adhering to a flat, premium modern aesthetic. The overall mood is calming, digital, and tactile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADb5TayBTGTj0C08B44XtYnDkX4eJhKjWMw3EDa4gdr4s8PNMHE5Iu7ZqTzxL-OXdP-baNa5DrTB4t2pp7hwFsc87GBlhW1hhaqd2-4e8NLi_RsiwRkm6BIVPpP-dwL7SzgXURsxRlhvGez7oF-nRoB0Ry6yvMT3u-C6uPCBrJzKPL9MvfPmYwdUNVEtLpC90ZmR9pJXOVBs_Bf-x9yNWCT3LTfJ74ulZTxNwGs9EpKs29v08AxpO_SyDlYhSPRjcobkhVpjljGAUI"/>
+</div>
+<div class="p-4">
+<div class="flex gap-1 mb-4">
+<div class="w-4 h-4 rounded-sm bg-[#F0F2F5]"></div>
+<div class="w-4 h-4 rounded-sm bg-[#D6D9E6]"></div>
+<div class="w-4 h-4 rounded-sm bg-[#B3B8D4]"></div>
+<div class="w-4 h-4 rounded-sm bg-[#7F77DD]"></div>
+<div class="w-4 h-4 rounded-sm bg-[#4A4499]"></div>
+</div>
+<h3 class="font-body-md text-body-md font-medium text-on-surface mb-3 line-clamp-1">Soft Geometries &amp; Gradients</h3>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<img alt="Creator avatar" class="w-6 h-6 rounded-full border-[0.5px] border-border-subtle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFZDEgq9QVlym5fIMSYP3ZxECT6JuKsCbBlkPh0eX-L8YLIiE4ZCiRptyNMykirh7owT9EQRkjaxZyNWCCyu5Y6JYhfD6QUEZkumOoCoAgbkdgHsawRWiyLB83-laSwwdUmIqI2MQ-Mm0-jSdm3ukpX7l07m6nkJUrU-Gra1tNEX-Forq6JNKkKBwwp6SRP14Ld33w48pE_6cNU9atjonlPR1bbINCr2oKBhRaYGPpdQTc0s3SstUhcUEs1XiruQP6oNJb1h6ah-I0"/>
+<span class="font-caption text-caption text-text-muted">Digital_Zen</span>
+</div>
+<div class="flex items-center gap-1 text-text-muted">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+<span class="font-caption text-caption">2.1k</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap px-margin-desktop flex flex-col md:flex-row justify-between items-center bg-surface dark:bg-inverse-surface border-t border-border-subtle dark:border-outline-variant mt-section-gap">
+<div class="flex flex-col items-center md:items-start gap-4 mb-8 md:mb-0">
+<span class="font-headline-md text-headline-md text-on-surface dark:text-inverse-on-surface">Visual Design Journey</span>
+<p class="font-body-md text-body-md text-text-muted dark:text-on-surface-variant">© 2024 Visual Design Journey. All rights reserved.</p>
+</div>
+<ul class="flex flex-wrap justify-center md:justify-end gap-6 font-label-caps text-label-caps text-text-muted dark:text-on-surface-variant">
+<li><a class="hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Archive</a></li>
+<li><a class="hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Contact</a></li>
+</ul>
+</footer>
+</body></html>

@@ -1,0 +1,77 @@
+# Visual Design Journey v2 — Laravel front controller for cPanel roots
+
+Options -Indexes
+DirectoryIndex public/index.php index.php
+
+<IfModule mod_php.c>
+  php_value upload_max_filesize 20M
+  php_value post_max_size 24M
+  php_value memory_limit 256M
+  php_value max_execution_time 60
+</IfModule>
+
+<FilesMatch "^(\.env|\.env\..*|artisan|composer\.(json|lock)|package(-lock)?\.json|phpunit\.xml|vite\.config\.js|schema.*\.sql|.*\.sql|.*\.py|deploy\.log|\.deploy_token|\.installed)$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Laravel public storage symlink path.
+  RewriteRule ^storage/(.*)$ public/storage/$1 [L]
+
+  # Keep application, dependency, backup and legacy reference code private.
+  RewriteRule ^(app|bootstrap|config|database|resources|routes|storage|vendor|node_modules|legacy-php|backup-before-laravel-v2)(/|$) - [F,L]
+
+  # Never execute uploaded scripts.
+  RewriteRule ^uploads/.*\.(php|phtml|php3|php4|php5|pl|py|jsp|asp|sh|cgi)$ - [F,NC,L]
+
+  # Laravel build assets live inside /public when cPanel cannot point document root there.
+  RewriteRule ^build/(.*)$ public/build/$1 [L]
+  RewriteRule ^favicon\.ico$ public/favicon.ico [L]
+
+  # Keep the legacy deploy console reachable while deploy parity moves into Laravel.
+  RewriteRule ^admin/deploy\.php$ - [L]
+
+  # /admin and /api are now Laravel/Filament endpoints, even though legacy directories exist.
+  RewriteRule ^admin(/.*)?$ public/index.php [QSA,L]
+  RewriteRule ^api(/.*)?$ public/index.php [QSA,L]
+
+  # Direct legacy PHP entry files should be handled by Laravel redirect/parity routes.
+  RewriteCond %{REQUEST_URI} !^/public/index\.php$
+  RewriteRule ^.+\.php$ public/index.php [QSA,L]
+
+  # Existing static files/directories stay directly accessible: uploads, assets, ads.txt, robots.txt.
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  RewriteRule ^ public/index.php [QSA,L]
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(?:jpg|jpeg|png|gif|svg|webp|avif|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(?:css|js)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>

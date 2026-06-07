@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Edit Board - Visual Design Journey</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#faf8ff",
+                        "inverse-primary": "#c5c0ff",
+                        "surface": "#faf8ff",
+                        "surface-dim": "#d2d9f4",
+                        "secondary-fixed": "#e1e3e4",
+                        "primary-container": "#7067cc",
+                        "tertiary-fixed": "#ffdf98",
+                        "surface-container-low": "#f2f3ff",
+                        "on-tertiary-fixed-variant": "#5a4300",
+                        "outline": "#787583",
+                        "secondary-container": "#e1e3e4",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#eaedff",
+                        "accent-soft-purple": "#7F77DD",
+                        "on-primary-fixed": "#140067",
+                        "primary-fixed": "#e4dfff",
+                        "on-primary-container": "#fffbff",
+                        "surface-container-highest": "#dae2fd",
+                        "on-secondary-container": "#626566",
+                        "secondary-fixed-dim": "#c5c7c8",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#5951b4",
+                        "on-primary-fixed-variant": "#41379b",
+                        "on-background": "#131b2e",
+                        "on-tertiary-container": "#fffbff",
+                        "surface-variant": "#dae2fd",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#474552",
+                        "border-subtle": "#E9ECEF",
+                        "secondary": "#5c5f60",
+                        "on-secondary-fixed-variant": "#454748",
+                        "primary": "#574eb1",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#745800",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#efc04c",
+                        "surface-container-high": "#e2e7ff",
+                        "tertiary-container": "#926f00",
+                        "inverse-surface": "#283044",
+                        "on-secondary-fixed": "#191c1d",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#131b2e",
+                        "on-tertiary-fixed": "#251a00",
+                        "inverse-on-surface": "#eef0ff",
+                        "on-error": "#ffffff",
+                        "outline-variant": "#c8c4d4",
+                        "text-muted": "#454F5E",
+                        "surface-white": "#FFFFFF",
+                        "background": "#faf8ff",
+                        "primary-fixed-dim": "#c5c0ff",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "container-max": "1440px",
+                        "margin-desktop": "48px",
+                        "section-gap": "80px",
+                        "margin-tablet": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Manrope"],
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Manrope"],
+                        "headline-xl-mobile": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "caption": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-xl-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "caption": ["13px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- Main Content -->
+<main class="flex-grow pt-32 px-margin-mobile md:px-margin-tablet lg:px-margin-desktop max-w-container-max mx-auto w-full pb-section-gap">
+<!-- Breadcrumb -->
+<nav class="mb-12 flex items-center space-x-2 text-text-muted font-label-caps text-label-caps">
+<a class="hover:text-primary transition-colors" href="#">My Boards</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Brutalist Concrete Textures</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface">Edit</span>
+</nav>
+<h1 class="font-headline-xl text-headline-xl mb-12">Edit Board</h1>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Images -->
+<div class="lg:col-span-7 space-y-6">
+<div class="flex justify-between items-end border-b border-border-subtle pb-4">
+<h2 class="font-headline-md text-headline-md">Media</h2>
+<span class="font-label-caps text-label-caps text-text-muted">5 Items</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-gutter">
+<!-- Image 1 -->
+<div class="relative group aspect-[4/5] rounded-lg overflow-hidden border border-border-subtle">
+<img alt="Brutalist concrete wall with harsh shadows" class="w-full h-full object-cover" data-alt="A close-up shot of a brutalist concrete wall, showing harsh, angular shadows cutting across the deeply textured gray surface. The aesthetic is stark, minimalist, and high-contrast, fitting a high-end architectural design mood board. The lighting is direct sunlight, emphasizing the raw, unpolished nature of the material." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB192kW0viHq8RGg6o6ntX66qBg2NU0KyFEJmwfmR9wMFeZxqELDcS2teEskq5SiqSsLcVkITKc1u4DqmRoCx9icLZIx8afUd7P5Nzny8C88md4fPENWT5gwK30OgMGd_U2aQGQE0Xgv6U2bx5FRiHW1CmTQaMbXLajMpevar7LYk33QUMTT28xymnfAbee7TDGTwWeDgrsj17Q6TaVXSr5rP_kqGhoGEhfLIx4luEEFdQHiGLGj9Fq7LdUl2oSLBczi_8WsGwuNpJ5"/>
+<button class="absolute top-2 right-2 w-8 h-8 bg-surface-white/90 backdrop-blur rounded-full flex items-center justify-center text-error opacity-0 group-hover:opacity-100 transition-opacity hover:bg-surface-white">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Image 2 -->
+<div class="relative group aspect-[4/5] rounded-lg overflow-hidden border border-border-subtle">
+<img alt="Abstract concrete staircase" class="w-full h-full object-cover" data-alt="An abstract perspective of a brutalist concrete staircase winding upwards. The composition highlights geometric repetition and stark lines against a bright, overcast sky. The overall tone is cool, gray, and minimalist, perfect for a high-fashion or architectural mood board. The texture of the poured concrete is clearly visible." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0QOF8Ezjq54bA9oBou8NTiSmLAFkSWHMT-_jiP4b6Rb2N4_cy_KxfuH1I3AbIT4vp3YxwLZJIh1gnWB_7U4yyJMLMR_F30RLCnaT_cRGOXV-wPJuNSVLaDSwkR0Vm499Q8roznnwaBmqM-ZVCHy8LjV3Q_eGEOHkfbBcEm8v12k1yHj3_Uw7DqKS1MR1yG4G7EcWyoDdbnMEeuBy4pPeA0mzKCqVljvyriAfTrWqr0SOvhM7qAPybVNdAkMkkaWo3y-BhfNpaRHPd"/>
+<button class="absolute top-2 right-2 w-8 h-8 bg-surface-white/90 backdrop-blur rounded-full flex items-center justify-center text-error opacity-0 group-hover:opacity-100 transition-opacity hover:bg-surface-white">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Image 3 -->
+<div class="relative group aspect-[4/5] rounded-lg overflow-hidden border border-border-subtle">
+<img alt="Concrete facade with small windows" class="w-full h-full object-cover" data-alt="A monolithic concrete building facade punctuated by small, deeply recessed square windows. The image is a study in repetition and brutalist architecture. The light is diffused, creating a soft gradient across the vast expanse of textured gray concrete. The mood is imposing yet serene, suited for a minimalist editorial gallery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVkXaXOpIGKpnKlGmeg1CkMPS4hqEtN0c_4G3Rlxl1cCBCkjwGE0dSuFZLdFYg3ok4cA2J2oUku--YU0fLJhP1tA93d8Z4yCClPfygpbv7sAGEEnd5Yq5X2ZRT8CGycMQS_nyVA5SgPtVNblCF3o8WGYspcDsrygwS8l16FamCnJQB3FFWO12v9KZQZMtLZTgdy1aIPhj_q0Rka_kAISPRHm1C2DbxNXqrYQDlxhUKVjlTYivzARGjvEuPA-LlzrZFQwXgPyZtLseD"/>
+<button class="absolute top-2 right-2 w-8 h-8 bg-surface-white/90 backdrop-blur rounded-full flex items-center justify-center text-error opacity-0 group-hover:opacity-100 transition-opacity hover:bg-surface-white">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Image 4 -->
+<div class="relative group aspect-[4/5] rounded-lg overflow-hidden border border-border-subtle">
+<img alt="Concrete column detail" class="w-full h-full object-cover" data-alt="A detailed, macro shot of a weathered concrete column, showing the imprints of wooden formwork left behind from the casting process. The lighting is soft and directional, highlighting the intricate imperfections and rough texture of the surface. The aesthetic is raw, industrial, and highly detailed, fitting a sophisticated design platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOSO756AddztLtXepc6uxJEFJj5yIYcTmgAYsKLh_PAVhFZPekk16MfBNYTULD0abBUAOtsvsGCvvBrvpFi94Zqx8utIl24KKsEexnW8YBCmE5wYupfi3X-OFSnqSNlXAa9ZaTNhTRGRJDTbPhzIbfzuDM-jjN2gpdDlCqFJG20gVRWxLqMd6gZLOveiO1_mLZqm0FNMG0wVNF1Wduj4Ke7fvStUfHhTLF7Dn8pz6Xv1cRfSyUvhz_3zb5rMM3IDz9iZHdakAe8eBb"/>
+<button class="absolute top-2 right-2 w-8 h-8 bg-surface-white/90 backdrop-blur rounded-full flex items-center justify-center text-error opacity-0 group-hover:opacity-100 transition-opacity hover:bg-surface-white">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Add More Zone -->
+<button class="aspect-[4/5] rounded-lg border border-dashed border-outline-variant flex flex-col items-center justify-center text-text-muted hover:border-accent-soft-purple hover:text-accent-soft-purple transition-colors bg-surface-container-lowest">
+<span class="material-symbols-outlined mb-2 text-[32px]">add_photo_alternate</span>
+<span class="font-label-caps text-label-caps">Add more images</span>
+</button>
+</div>
+</div>
+<!-- Right Column: Form -->
+<div class="lg:col-span-5">
+<div class="sticky top-28 space-y-8">
+<div class="border-b border-border-subtle pb-4">
+<h2 class="font-headline-md text-headline-md">Board Details</h2>
+</div>
+<form class="space-y-6">
+<!-- Title -->
+<div>
+<label class="block font-label-caps text-label-caps text-text-muted mb-2" for="title">Title</label>
+<input class="w-full bg-transparent border border-border-subtle rounded-md px-4 py-3 font-body-md text-body-md focus:outline-none focus:border-accent-soft-purple transition-colors text-on-surface" id="title" type="text" value="Brutalist Concrete Textures"/>
+</div>
+<!-- Description -->
+<div>
+<label class="block font-label-caps text-label-caps text-text-muted mb-2" for="description">Description</label>
+<textarea class="w-full bg-transparent border border-border-subtle rounded-md px-4 py-3 font-body-md text-body-md focus:outline-none focus:border-accent-soft-purple transition-colors text-on-surface resize-none" id="description" rows="4">A collection exploring the raw, unpolished beauty of cast concrete. Focusing on the interplay of harsh shadows, geometric forms, and the intricate textures left by wooden formwork. Ideal reference for brutalist architectural studies.</textarea>
+</div>
+<!-- Tags -->
+<div>
+<label class="block font-label-caps text-label-caps text-text-muted mb-2">Tags</label>
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="inline-flex items-center bg-[#F8F9FA] px-3 py-1.5 rounded-full font-label-caps text-label-caps text-on-surface border border-border-subtle">
+                                    Architecture
+                                    <button class="ml-2 text-text-muted hover:text-error focus:outline-none" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</span>
+<span class="inline-flex items-center bg-[#F8F9FA] px-3 py-1.5 rounded-full font-label-caps text-label-caps text-on-surface border border-border-subtle">
+                                    Brutalism
+                                    <button class="ml-2 text-text-muted hover:text-error focus:outline-none" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</span>
+<span class="inline-flex items-center bg-[#F8F9FA] px-3 py-1.5 rounded-full font-label-caps text-label-caps text-on-surface border border-border-subtle">
+                                    Textures
+                                    <button class="ml-2 text-text-muted hover:text-error focus:outline-none" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</span>
+</div>
+<input class="w-full bg-transparent border border-border-subtle rounded-md px-4 py-3 font-body-md text-body-md focus:outline-none focus:border-accent-soft-purple transition-colors text-on-surface" placeholder="Add a tag..." type="text"/>
+</div>
+<!-- Actions -->
+<div class="pt-8 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-4 w-full sm:w-auto order-2 sm:order-1">
+<button class="px-6 py-3 rounded-full border border-border-subtle text-on-surface font-label-caps text-label-caps hover:bg-[#F8F9FA] transition-colors w-full sm:w-auto" type="button">
+                                    Cancel
+                                </button>
+<button class="px-6 py-3 rounded-full bg-accent-soft-purple text-surface-white font-label-caps text-label-caps hover:opacity-90 transition-opacity w-full sm:w-auto" type="submit">
+                                    Save Changes
+                                </button>
+</div>
+<button class="px-6 py-3 rounded-full border border-error text-error font-label-caps text-label-caps hover:bg-error-container/30 transition-colors w-full sm:w-auto order-1 sm:order-2" type="button">
+                                Delete Board
+                            </button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</main>
+</body></html>
