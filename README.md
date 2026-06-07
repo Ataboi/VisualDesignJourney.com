@@ -13,6 +13,41 @@ The project is currently a hybrid Laravel + legacy PHP codebase: Laravel owns th
 - Legacy admin deploy surface with ZIP deploy, rollback, backup downloads, live verification, inbound GitHub webhook handling, and outbound deploy webhook sync.
 - SEO-focused routing with sitemap, RSS feed, JSON-LD validation, localized blog routes, and public static pages.
 
+## Screenshots
+
+<table>
+  <tr>
+    <td width="50%">
+      <strong>Main Feed</strong><br>
+      <img src="screens/visual_design_journey_main_feed_1/screen.png" alt="VisualDesignJourney main feed" width="100%">
+    </td>
+    <td width="50%">
+      <strong>Create Board</strong><br>
+      <img src="screens/visual_design_journey_create_board/screen.png" alt="Create board flow" width="100%">
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <strong>Search Results</strong><br>
+      <img src="screens/visual_design_journey_search_results/screen.png" alt="Search results page" width="100%">
+    </td>
+    <td width="50%">
+      <strong>User Profile</strong><br>
+      <img src="screens/visual_design_journey_user_profile/screen.png" alt="User profile page" width="100%">
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <strong>Curators</strong><br>
+      <img src="screens/visual_design_journey_curators/screen.png" alt="Curators directory" width="100%">
+    </td>
+    <td width="50%">
+      <strong>Mobile Navigation</strong><br>
+      <img src="screens/visual_design_journey_mobile_navigation/screen.png" alt="Mobile navigation experience" width="100%">
+    </td>
+  </tr>
+</table>
+
 ## Tech Stack
 
 - **Backend:** PHP 8.3, Laravel 13, Filament 5
